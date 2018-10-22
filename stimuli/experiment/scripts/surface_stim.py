@@ -51,10 +51,10 @@ varKnzSze = 2.5
 varKnzPos = 3.0
 
 # Background colour:
-lstBckgrd = [-0.8, -0.8, -0.8]
+lstBckgrd = [-0.2, -0.2, -0.2]
 
 # Pac-Man colour:
-lstKnzClr = [-0.2, -0.2, -0.2]
+lstKnzClr = [-0.8, -0.8, -0.8]
 
 # Time (in seconds) that participants have to respond to a target event in
 # order for the event to be logged as a hit:
