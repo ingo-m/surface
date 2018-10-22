@@ -1,0 +1,11 @@
+<ColorMaps>
+<ColorMap name="polar_angle" space="RGB">
+<Point x="-0.010" r="1.0" g="1.0" b="1.0" o="0.5"/>
+<Point x="0.010" r="1.0" g="1.0" b="1.0" o="0.5"/>
+<Point x="0.020" r="1.0" g="0.0" b="0.0" o="0.5"/>
+<Point x="90.00" r="0.0" g="1.0" b="0.0" o="0.5"/>
+<Point x="180.0" r="0.0" g="0.0" b="1.0" o="0.5"/>
+<Point x="270.0" r="1.0" g="1.0" b="0.0" o="0.5"/>
+<Point x="360.0" r="1.0" g="0.0" b="0.0" o="0.5"/>
+</ColorMap>
+</ColorMaps>

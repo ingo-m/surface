@@ -1,0 +1,10 @@
+<ColorMaps>
+<ColorMap name="eccentricity" space="RGB">
+<Point x="-0.010" o="0.0" r="1.0" g="1.0" b="1.0"/>
+<Point x="0.010" o="0.0" r="1.0" g="1.0" b="1.0"/>
+<Point x="0.050" o="1.0" r="1.0" g="0.0" b="0.0"/>
+<Point x="2.550" o="1.0" r="1.0" g="1.0" b="0.0"/>
+<Point x="4.550" o="1.0" r="0.0" g="1.0" b="1.0"/>
+<Point x="6.500" o="1.0" r="0.0" g="0.0" b="1.0"/>
+</ColorMap>
+</ColorMaps>

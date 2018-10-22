@@ -1,0 +1,1 @@
+For the pRF run (func_07) FEAT is used only for filtering.
