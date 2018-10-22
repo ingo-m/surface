@@ -51,10 +51,10 @@ varKnzSze = 2.5
 varKnzPos = 3.0
 
 # Background colour:
-lstBckgrd = [-0.7, -0.7, -0.7]
+lstBckgrd = [-0.8, -0.8, -0.8]
 
 # Pac-Man colour:
-lstKnzClr = [-0.1, -0.1, -0.1]
+lstKnzClr = [-0.2, -0.2, -0.2]
 
 # Time (in seconds) that participants have to respond to a target event in
 # order for the event to be logged as a hit:
@@ -66,7 +66,7 @@ varHitTme = 2.0
 # *** GUI
 
 # Name of the experiment:
-strExpNme = 'Kaniza'
+strExpNme = 'Surface'
 
 # Get date string as default session name:
 strDate = str(datetime.datetime.now())
@@ -349,6 +349,30 @@ objSqrCntr = visual.ShapeStim(
     autoLog=False,
     )
 
+# Full screen square (for changing brackground colour):
+objSqrFull = visual.ShapeStim(
+    win=objWin,
+    units='norm',
+    lineWidth=0.0,
+    lineColor=[0.0, 0.0, 0.0],
+    lineColorSpace='rgb',
+    fillColor=lstKnzClr,
+    fillColorSpace='rgb',
+    vertices=((-1.0, 1.0),
+              (1.0, 1.0),
+              (1.0, -1.0),
+              (-1.0, -1.0)),
+    windingRule=None,
+    closeShape=True,
+    pos=(0, 0),
+    size=1,
+    ori=0.0,
+    opacity=1.0,
+    contrast=1.0,
+    interpolate=False,
+    autoLog=False,
+    )
+
 # Fixation dot:
 objFix = visual.Circle(
     objWin,
@@ -593,9 +617,6 @@ for idx01 in range(varNumEvnts):  #noqa
         # Switch target (show target or not?):
         varSwtTrgt = 0
 
-        # Set background colour to dark:
-        objWin.setColor(lstBckgrd)
-
         # Continue with the rest block?
         while varTme02 < (varTme01 + varTmpEvntStrt + varTmpEvntDur):
 
@@ -746,32 +767,31 @@ for idx01 in range(varNumEvnts):  #noqa
         # Switch target (show target or not?):
         varSwtTrgt = 0
 
-        # Kanizsa square - set background to dark:
-        if (varTmpEvntType == 3):
-            objWin.setColor(lstBckgrd)
-
-        # Bright square - set background to dark, and square to light:
-        elif (varTmpEvntType == 4):
-            objWin.setColor(lstBckgrd)
+        # Bright square on dark brackground:
+        if (varTmpEvntType == 4):
             objSqrCntr.setFillColor(lstKnzClr)
 
-        # Dark square - set background to light, square to dark:
+        # Dark square on bright background:
         elif (varTmpEvntType == 5):
-            objWin.setColor(lstKnzClr)
             objSqrCntr.setFillColor(lstBckgrd)
 
         # Continue with the stimulus block?
         while varTme02 < (varTme01 + varTmpEvntStrt + varTmpEvntDur):
 
             # Draw Kanizsa square:
-            if varTmpEvntType == 3:
+            if (varTmpEvntType == 3):
                 objKnz01.draw(win=objWin)
                 objKnz02.draw(win=objWin)
                 objKnz03.draw(win=objWin)
                 objKnz04.draw(win=objWin)
 
-            # Draw central square:
-            if (4 <= varTmpEvntType):
+            # Draw bright central square (on dark background):
+            elif (varTmpEvntType == 4):
+                objSqrCntr.draw(win=objWin)
+
+            # Draw dark central square (on bright background):
+            elif (varTmpEvntType == 5):
+                objSqrFull.draw(win=objWin)
                 objSqrCntr.draw(win=objWin)
 
             # Draw fixation dot:
