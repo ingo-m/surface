@@ -28,7 +28,7 @@ from psychopy import visual, core, monitors, logging, event, gui, data
 # *** Define general parameters
 
 # Length of target events [s]:
-varDurTar = 0.8
+varDurTar = 0.6
 
 # Akin et al. (2014): "the figures oscillated sinusoidally with a half period
 # of 480 ms". Thus, one full oscillation cycle took 960 ms, and the oscillation
@@ -44,12 +44,11 @@ varPixX = 1920  # [1920.0] for 7T scanner
 varPixY = 1200  # [1200.0] for 7T scanner
 
 # Size (diameter) of Kanizsa inducers (Pac-Man) [degree of visual angle]:
-varKnzSze = 2.5
+varKnzSze = 3.0
 
 # Position (x & y displacement from origin) of Kanizsa inducers (Pac-Man)
 # [degree of visual angle]:
 varKnzPos = 3.0
-
 
 # Luminance of the stimuli and background is matched to Kok and Lange (2014).
 #
@@ -968,7 +967,7 @@ if 0.0 < float(varCntHit + varCntMis):
                        + ' targets out of '
                        + str(varCntHit + varCntMis)
                        + '\n'
-                       + 'There is still room for improvement.')
+                       + 'There is still room for improvement ;)')
     else:
         # Low performance:
         strFeedback = ('You have detected '
@@ -976,7 +975,7 @@ if 0.0 < float(varCntHit + varCntMis):
                        + ' targets out of '
                        + str(varCntHit + varCntMis)
                        + '\n'
-                       + 'Please try to focus more.')
+                       + 'Please try to focus more :(')
 
     # Create text object:
     objTxtTmr = visual.TextStim(objWin,
