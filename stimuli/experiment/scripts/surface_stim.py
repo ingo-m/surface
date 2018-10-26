@@ -50,11 +50,26 @@ varKnzSze = 2.5
 # [degree of visual angle]:
 varKnzPos = 3.0
 
+
+# Luminance of the stimuli and background is matched to Kok and Lange (2014).
+#
+# Kok, P., & de Lange, F. P. (2014). Shape perception simultaneously up- and
+# downregulates neural activity in the primary visual cortex.
+#
+# Luminance of bright stimuli is 246 [cd / m^2], corresponding to a psychopy
+# pixel intensity of -0.26.
+#
+# Luminance of dark stimuli is 0.43 [cd / m^2], corresponding to a psychopy
+# pixel intensity of -0.82.
+#
+# The conversion from pixel intensity to luminance is based on a luminance
+# measurement performed on 13.09.2018.
+
 # Background colour:
-lstBckgrd = [-0.2, -0.2, -0.2]
+lstBckgrd = [-0.26, -0.26, -0.26]
 
 # Pac-Man colour:
-lstKnzClr = [-0.8, -0.8, -0.8]
+lstKnzClr = [-0.82, -0.82, -0.82]
 
 # Time (in seconds) that participants have to respond to a target event in
 # order for the event to be logged as a hit:
