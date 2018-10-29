@@ -9,39 +9,38 @@
 #------------------------------------------------------------------------------
 # Define session IDs & paths:
 
-strPathParent01="${pacman_data_path}${pacman_sub_id}/nii/feat_level_2/"
+strPathParent01="${pacman_data_path}${pacman_sub_id}/nii/feat_level_2_comb/"
 
-# Contrasts are coded as follows:
-#     cope 1: Pd
-#     cope 2: Cd
-#     cope 3: Ps
-#     cope 4: Pd_min_Cd
-#     cope 5: Pd_min_Ps
-#     cope 6: Cd_min_Ps
-#     cope 7: Linear
-#     cope 8: Pd_min_Cd_Ps
+# Order of conditions (sst = sustained, trn = transient):
+#     bright_square_sst
+#     bright_square_trn
+#     dark_square_sst
+#     dark_square_trn
+#     kanizsa_sst
+#     kanizsa_trn
+#     target
 
 # Input (feat directories):
-lstIn=(feat_level_2.gfeat/cope1.feat/stats/zstat1.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat2.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat3.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat4.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat5.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat6.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat7.nii.gz \
-       feat_level_2.gfeat/cope1.feat/stats/zstat8.nii.gz)
+lstIn=(feat_level_2_bright_square_sst \
+       feat_level_2_bright_square_trn \
+       feat_level_2_dark_square_sst \
+       feat_level_2_dark_square_trn \
+       feat_level_2_kanizsa_sst \
+       feat_level_2_kanizsa_trn \
+       feat_level_2_target)
 
 # Output (file names):
-lstOt=(Pd \
-       Cd \
-       Ps \
-       Pd_min_Cd \
-       Pd_min_Ps \
-       Cd_min_Ps \
-       Linear \
-       Pd_min_Cd_Ps)
+lstOt=(bright_square_sst \
+       bright_square_trn \
+       dark_square_sst \
+       dark_square_trn \
+       kanizsa_sst \
+       kanizsa_trn \
+       target)
 
-strPathOutput="${pacman_data_path}${pacman_sub_id}/nii/stat_maps/"
+strPathParent02=".gfeat/cope1.feat/stats/zstat1.nii.gz"
+
+strPathOutput="${pacman_data_path}${pacman_sub_id}/nii/stat_maps_comb/"
 #------------------------------------------------------------------------------
 
 
@@ -60,7 +59,7 @@ varNumIn=$((varNumIn - 1))
 for index01 in $(seq 0 $varNumIn)
 do
 
-	strTmpIn="${strPathParent01}${lstIn[index01]}"
+	strTmpIn="${strPathParent01}${lstIn[index01]}${strPathParent02}"
 	strTmpOut="${strPathOutput}feat_level_2_${lstOt[index01]}_zstat.nii.gz"
 	echo "------cp ${strTmpIn} ${strTmpOut}"
 	cp ${strTmpIn} ${strTmpOut}

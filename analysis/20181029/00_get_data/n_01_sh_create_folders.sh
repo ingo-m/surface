@@ -132,12 +132,6 @@ then
 	mkdir "${str_nii}/spm_reg_reference_weighting"
 	mkdir "${str_nii}/spm_reg_moco_params"
 
-	mkdir "${str_nii}/stat_maps"
-	mkdir "${str_nii}/stat_maps_up"
-
-	mkdir "${str_nii}/stat_maps_trans"
-	mkdir "${str_nii}/stat_maps_trans_up"
-
 	mkdir "${str_nii}/stat_maps_comb"
 	mkdir "${str_nii}/stat_maps_comb_up"
 
