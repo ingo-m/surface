@@ -35,7 +35,7 @@ strSubId = str(os.environ['pacman_sub_id'])
 # derivatives/sub-01/raw_data/ses-01/':
 strPathIn = (strDataPth
              + strSubId
-             + '/raw_data/')
+             + '/nii/raw_data/')
 
 # Get list of files in results directory:
 lstFls = [f for f in os.listdir(strPathIn) if isfile(join(strPathIn, f))]
