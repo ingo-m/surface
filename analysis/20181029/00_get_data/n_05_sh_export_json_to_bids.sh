@@ -35,30 +35,32 @@ strAnat="${strBidsDir}${pacman_sub_id_bids}/anat/"
 #------------------------------------------------------------------------------
 # *** Copy metadata for functional images
 
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func01_FOV_RL_SERIES_008_c32.json ${strFunc}func_01.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func02_FOV_RL_SERIES_010_c32.json ${strFunc}func_02.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func03_FOV_RL_SERIES_012_c32.json ${strFunc}func_03.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func04_FOV_RL_SERIES_014_c32.json ${strFunc}func_04.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func05_FOV_RL_SERIES_022_c32.json ${strFunc}func_05.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func06_FOV_RL_SERIES_024_c32.json ${strFunc}func_06.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func07_FOV_RL_pRF_SERIES_026_c32.json ${strFunc}func_07.json
-cp ${strRaw}PROTOCOL_BP_ep3d_bold_func08_FOV_RL_long_SERIES_028_c32.json ${strFunc}func_08.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func01_RL_SERIES_008_c32.json ${strFunc}func_01.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func02_RL_pRF_SERIES_010_c32.json ${strFunc}func_02.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func01_RL_SERIES_012_c32.json ${strFunc}func_03.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func02_RL_SERIES_014_c32.json ${strFunc}func_04.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func03_RL_SERIES_022_c32.json ${strFunc}func_05.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func04_RL_SERIES_024_c32.json ${strFunc}func_06.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func05_RL_SERIES_026_c32.json ${strFunc}func_07.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func06_RL_SERIES_028_c32.json ${strFunc}func_08.json
+cp ${strRaw}PROTOCOL_BP_ep3d_bold_func03_RL_pRF_SERIES_030_c32.json ${strFunc}func_09.json
 #------------------------------------------------------------------------------
 
 
 #------------------------------------------------------------------------------
 # *** Copy metadata for opposite-phase-polarity SE images
 
-cp ${strRaw}PROTOCOL_cmrr_mbep2d_se_LR_SERIES_005_c32.json ${strSeOp}func_00.json
-cp ${strRaw}PROTOCOL_cmrr_mbep2d_se_RL_SERIES_006_c32.json ${strSe}func_00.json
+# NOTE: SE EPI images were acquired in wrong order for subject 20181029 (i.e.
+#       first R>>L, then L>>R. Instead of adjusting the moco pipeline, images
+#       are switched here, and in the topup datain file.
+cp ${strRaw}PROTOCOL_cmrr_mbep2d_se_RL_SERIES_005_c32.json ${strSeOp}func_00.json
+cp ${strRaw}PROTOCOL_cmrr_mbep2d_se_LR_SERIES_006_c32.json ${strSe}func_00.json
 #------------------------------------------------------------------------------
 
 
 #------------------------------------------------------------------------------
 # *** Copy metadata for mp2rage images
 
-# Note: Because the first MP2RAGEs was affected by a motion artefact, a second
-# MP2RAGE was acquired for this subject at the end of the session.
 cp ${strRaw}PROTOCOL_mp2rage_0.7_iso_p2_SERIES_015_c32.json ${strAnat}mp2rage_inv1.json
 cp ${strRaw}PROTOCOL_mp2rage_0.7_iso_p2_SERIES_016_c32.json ${strAnat}mp2rage_inv1_phase.json
 cp ${strRaw}PROTOCOL_mp2rage_0.7_iso_p2_SERIES_017_c32.json ${strAnat}mp2rage_pdw.json
