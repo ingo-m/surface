@@ -204,9 +204,6 @@ echo "   sustained and transient predictors."
 source ${strPathPrnt}03_intermediate_steps/n_02a_sh_fsl_updatefeatreg_comb.sh
 date
 
-
-
-
 echo "---Automatic: Create event related averages."
 python ${strPathPrnt}03_intermediate_steps/n_03a_py_evnt_rltd_avrgs.py
 date
@@ -219,15 +216,12 @@ echo "---Automatic: Create event related averages."
 python ${strPathPrnt}03_intermediate_steps/n_03c_py_evnt_rltd_avrgs.py
 date
 
-
-
-
 echo "---Automatic: Prepare depth-sampling of event related averages."
 source ${strPathPrnt}03_intermediate_steps/n_04_sh_prepare_era_depthsampling.sh
 date
 
 echo "---Automatic: Calculate spatial correlation."
-python ${strPathPrnt}03_intermediate_steps/n_12_py_spatial_correlation.py
+python ${strPathPrnt}03_intermediate_steps/n_05_py_spatial_correlation.py
 date
 #-------------------------------------------------------------------------------
 

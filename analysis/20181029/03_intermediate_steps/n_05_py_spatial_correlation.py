@@ -42,7 +42,15 @@ varThr = 0.95
 # Dictionary with subject IDs and run IDs for each subject. (For some subjects,
 # runs are excluded at an earlier stage, e.g. because of low behavioural
 # performance.)
-dicSubId = {pacman_sub_id: ['01', '02', '03', '04', '05', '06', '07', '08']}
+dicSubId = {pacman_sub_id: ['prf_01',
+                            'prf_02',
+                            'func_01',
+                            'func_02',
+                            'func_03',
+                            'func_04',
+                            'func_05',
+                            'func_06',
+                            'prf_03']}
 
 # The path of the 3D reference images (subject ID left open):
 strPathRef = (pacman_data_path +
@@ -50,7 +58,7 @@ strPathRef = (pacman_data_path +
 
 # The path of the 4D images (subject ID and run ID left open):
 strPathIn = (pacman_data_path
-             + '{}/nii/func_reg_distcorUnwrp/func_{}.nii.gz')
+             + '{}/nii/func_reg_distcorUnwrp/{}.nii.gz')
 
 # The output directory & name (for the plot; subject ID left open twice):
 strPathOut = (pacman_data_path
