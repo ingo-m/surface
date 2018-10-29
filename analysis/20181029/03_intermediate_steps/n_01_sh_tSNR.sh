@@ -15,15 +15,13 @@ arySessionIDs=(func_01 \
                func_03 \
                func_04 \
                func_05 \
-               func_06 \
-               func_07 \
-               func_08)
+               func_06)
 
 # Parent path:
 strPathParent="${pacman_data_path}${pacman_sub_id}/nii/"
 
 # Path to feat directories:
-strPathInput="${strPathParent}feat_level_1/"
+strPathInput="${strPathParent}feat_level_1_comb/"
 
 # Output directory:
 strPathOutput="${strPathParent}func_reg_tsnr/"
@@ -134,4 +132,3 @@ echo "fslmaths ${strTmp06} -div ${varCount} ${strTmp06}"
 fslmaths ${strTmp06} -div ${varCount} ${strTmp06}
 
 echo "--------------------------------------------------------------"
-

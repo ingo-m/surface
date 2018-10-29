@@ -164,8 +164,29 @@ date
 #-------------------------------------------------------------------------------
 # ### First level FEAT
 
+#if ${pacman_wait};
+#then
+#	echo "---Manual:"
+#	echo "   Adjust file names in"
+#							echo "   ${strPathPrnt}02_feat/n_01_rename.sh"
+#	echo "   Type 'go' to continue"
+#	read -r -s -d $'g'
+#	read -r -s -d $'o'
+#	date
+#else
+#	:
+#fi
+
+echo "---Automatic: Prepare 1st level FEAT - rename runs."
+source ${strPathPrnt}02_feat/n_01_rename.sh
+date
+
 echo "---Automatic: 1st level FSL FEAT with sustained and transient predictors."
-source ${strPathPrnt}02_feat/n_01_feat_level_1_script_parallel_comb.sh
+source ${strPathPrnt}02_feat/n_02_feat_level_1_script_parallel_comb.sh
+date
+
+echo "---Automatic: 1st level FSL FEAT preprocessing - pRF runs."
+source ${strPathPrnt}02_feat/n_03_feat_level_1_script_parallel_prf.sh
 date
 #-------------------------------------------------------------------------------
 
@@ -178,19 +199,13 @@ echo "---Automatic: Calculate tSNR maps."
 source ${strPathPrnt}03_intermediate_steps/n_01_sh_tSNR.sh
 date
 
-echo "---Automatic: Update FEAT directories (dummy registration)."
-source ${strPathPrnt}03_intermediate_steps/n_02a_sh_fsl_updatefeatreg.sh
-date
-
-echo "---Automatic: Update FEAT directories (dummy registration) for transient"
-echo "   predictors."
-source ${strPathPrnt}03_intermediate_steps/n_02b_sh_fsl_updatefeatreg_trans.sh
-date
-
 echo "---Automatic: Update FEAT directories (dummy registration) for combined"
 echo "   sustained and transient predictors."
-source ${strPathPrnt}03_intermediate_steps/n_02c_sh_fsl_updatefeatreg_comb.sh
+source ${strPathPrnt}03_intermediate_steps/n_02a_sh_fsl_updatefeatreg_comb.sh
 date
+
+
+
 
 echo "---Automatic: Create event related averages."
 python ${strPathPrnt}03_intermediate_steps/n_03a_py_evnt_rltd_avrgs.py
@@ -204,9 +219,8 @@ echo "---Automatic: Create event related averages."
 python ${strPathPrnt}03_intermediate_steps/n_03c_py_evnt_rltd_avrgs.py
 date
 
-echo "---Automatic: Create event related averages."
-python ${strPathPrnt}03_intermediate_steps/n_03d_py_evnt_rltd_avrgs.py
-date
+
+
 
 echo "---Automatic: Prepare depth-sampling of event related averages."
 source ${strPathPrnt}03_intermediate_steps/n_04_sh_prepare_era_depthsampling.sh

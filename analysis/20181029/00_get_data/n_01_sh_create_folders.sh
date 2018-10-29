@@ -67,11 +67,7 @@ then
 
 	mkdir "${str_nii}/"
 
-	mkdir "${str_nii}/feat_level_1"
-	mkdir "${str_nii}/feat_level_2"
-
-	mkdir "${str_nii}/feat_level_1_trans"
-	mkdir "${str_nii}/feat_level_2_trans"
+	mkdir "${str_nii}/feat_level_1_prf"
 
 	mkdir "${str_nii}/feat_level_1_comb"
 	mkdir "${str_nii}/feat_level_2_comb"

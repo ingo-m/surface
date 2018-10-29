@@ -14,7 +14,7 @@ echo "-Distortion correction"
 #------------------------------------------------------------------------------
 # Define session IDs & paths:
 
-# Parent directory"
+# Parent directory:
 strPathParent="${pacman_data_path}${pacman_sub_id}/nii/"
 
 # Functional runs (input & output):
