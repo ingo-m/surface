@@ -26,15 +26,15 @@ else
 	source ${strPathPrnt}00_get_data/n_02_sh_dcm2nii.sh
 
 	echo "---Automatic: Export nii to bids."
-	source ${strPathPrnt}00_get_data/n_03_py_rename.sh
+	source ${strPathPrnt}00_get_data/n_03_py_rename.py
 
 	if ${pacman_wait};
 	then
 		echo "---Manual:"
 		echo "   Adjust file names in"
-                echo "   ${strPathPrnt}00_get_data/n_03_sh_export_nii_to_bids.sh"
+                echo "   ${strPathPrnt}00_get_data/n_04_sh_export_nii_to_bids.sh"
 		echo "   and in"
-                echo "   ${strPathPrnt}00_get_data/n_04_sh_export_json_to_bids.sh"
+                echo "   ${strPathPrnt}00_get_data/n_05_sh_export_json_to_bids.sh"
 		echo "   Type 'go' to continue"
 		read -r -s -d $'g'
 		read -r -s -d $'o'
