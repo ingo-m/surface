@@ -1,9 +1,8 @@
 %--------------------------------------------------------------------------
 % Create a 'batch' file for SPM motion correction.
 %--------------------------------------------------------------------------
-% NOTE: This version assumes that runs are named 'func_00', 'func_01', and
-% so forth, with 'func_00' referring to a SE image used for distotrion
-% correction.
+% NOTE: This version is used for creating a moco batch for opposite phase
+% polarity data, assuming the file name to be 'func_00'.
 %--------------------------------------------------------------------------
 % Ingo Marquardt, 2017
 %--------------------------------------------------------------------------
@@ -14,9 +13,9 @@ pacman_sub_id = getenv('pacman_sub_id');
 pacman_anly_path = getenv('pacman_anly_path');
 pacman_data_path = getenv('pacman_data_path');
 % Path of the SPM moco directory:
-strPathParent = strcat(pacman_data_path, pacman_sub_id, '/nii/spm_reg/');
+strPathParent = strcat(pacman_data_path, pacman_sub_id, '/nii/spm_reg_op/');
 % The number of functional runs:
-varNumRuns = 9;
+varNumRuns = 1;
 % Name of the 'SPM batch' to be created:
 strPathOut = [strPathParent, 'spm_moco_batch.mat'];
 %--------------------------------------------------------------------------
@@ -54,13 +53,15 @@ for index_01 = 1:varNumRuns
 end
 %--------------------------------------------------------------------------
 %% Prepare parameters for motion correction
+% Initialise jobs configuration:
+% spm_jobman('initcfg');
 % Clear old batches:
 clear matlabbatch;
 % Here we determine the settings for the SPM registrations. See SPM manual
 % for details. First, the parameters for the estimation:
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.quality = 1.0;
-matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.sep = 0.8;
-matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.fwhm = 1.6;
+matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.sep = 0.9;
+matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.fwhm = 1.8;
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.rtm = 1;
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.interp = 7;
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.wrap = [0 0 0];

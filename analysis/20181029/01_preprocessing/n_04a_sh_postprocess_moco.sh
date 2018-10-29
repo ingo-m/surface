@@ -24,7 +24,8 @@ arySessionIDs=(func_01 \
                func_05 \
                func_06 \
                func_07 \
-               func_08)
+               func_08 \
+               func_09)
 
 # Input directory:
 strPathInput="${strPathParent}spm_reg/"

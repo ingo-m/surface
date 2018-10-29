@@ -10,23 +10,23 @@
 # ### Define paths
 
 # Subject ID:
-pacman_sub_id="20180118"
+pacman_sub_id="20181029"
 
 # BIDS subject ID:
-pacman_sub_id_bids="sub-09"
+pacman_sub_id_bids="sub-01"
 
 # Analysis parent directory (containing scripts):
-pacman_anly_path="/home/john/PhD/GitLab/PacMan/analysis/"
+pacman_anly_path="/home/john/PhD/GitLab/surface/analysis/"
 
 # Data parent directory (containing MRI data). If working with the BIDS data,
 # this data should be placed here (i.e. this folder should contain a folder
 # called 'BIDS', which in turn contains the subject directories, such as
 # '~/BIDS/sub-01/...').
-pacman_data_path="/media/sf_D_DRIVE/MRI_Data_PhD/05_PacMan/"
+pacman_data_path="/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/"
 
 # Whether to load data from BIDS structure. If 'true', data is loaded from BIDS
 # structure. If 'false', DICOM data is converted into BIDS-compatible nii first.
-pacman_from_bids=true
+pacman_from_bids=false
 
 # Wait for manual user input? When running the analysis for the first time, some
 # steps need to be performed manually (e.g. creation of brain masks for moco
@@ -34,7 +34,7 @@ pacman_from_bids=true
 # until the user provides the manual input. However, if the manual input is
 # already available (when re-running the analysis), these breaks can be skipped.
 # Set to 'true' if script should wait.
-pacman_wait=false
+pacman_wait=true
 
 # Number of parallel processes to use (for pRF finding):
 pacman_cpu="11"
@@ -74,4 +74,3 @@ docker run -it --rm \
     -e USER \
     dockerimage_pacman_jessie ${pacman_anly_path}${pacman_sub_id}/metascript_02.sh
 #-------------------------------------------------------------------------------
-

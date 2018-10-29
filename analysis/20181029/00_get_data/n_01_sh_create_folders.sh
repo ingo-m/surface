@@ -30,7 +30,8 @@ ary_run_IDs=(func_01 \
              func_05 \
              func_06 \
              func_07 \
-             func_08)
+             func_08 \
+             func_09)
 # -----------------------------------------------------------------------------
 
 
@@ -165,17 +166,15 @@ then
 
 	mkdir "${str_cbs}/lh"
 	mkdir "${str_cbs}/lh_era"
-	mkdir "${str_cbs}/lh_era/control_dynamic"
-	mkdir "${str_cbs}/lh_era/pacman_dynamic"
-	mkdir "${str_cbs}/lh_era/pacman_static"
-	mkdir "${str_cbs}/lh_era/pacman_dynamic_long"
+	mkdir "${str_cbs}/lh_era/kanizsa"
+	mkdir "${str_cbs}/lh_era/dark_square"
+	mkdir "${str_cbs}/lh_era/bright_square"
 
 	mkdir "${str_cbs}/rh"
 	mkdir "${str_cbs}/rh_era"
-	mkdir "${str_cbs}/rh_era/control_dynamic"
-	mkdir "${str_cbs}/rh_era/pacman_dynamic"
-	mkdir "${str_cbs}/rh_era/pacman_static"
-	mkdir "${str_cbs}/rh_era/pacman_dynamic_long"
+  mkdir "${str_cbs}/rh_era/kanizsa"
+	mkdir "${str_cbs}/rh_era/dark_square"
+	mkdir "${str_cbs}/rh_era/bright_square"
 
 else
 
