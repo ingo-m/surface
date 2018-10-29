@@ -26,7 +26,7 @@ else
 	source ${strPathPrnt}00_get_data/n_02_sh_dcm2nii.sh
 
 	echo "---Automatic: Export nii to bids."
-	source ${strPathPrnt}00_get_data/n_03_py_rename.py
+	python ${strPathPrnt}00_get_data/n_03_py_rename.py
 
 	if ${pacman_wait};
 	then
