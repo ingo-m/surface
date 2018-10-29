@@ -29,7 +29,7 @@ from os.path import isfile, join
 
 # Load environmental variables defining the input data path:
 strDataPth = str(os.environ['pacman_data_path'])
-strSubId = str(os.environ['pacman_sub_id_bids'])
+strSubId = str(os.environ['pacman_sub_id'])
 
 # Full directory, e.g. '/media/sf_D_DRIVE/MRI_Data_PhD/08_lgn_prf/
 # derivatives/sub-01/raw_data/ses-01/':
