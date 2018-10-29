@@ -30,8 +30,8 @@ import numpy as np
 lstEventTypes = ['Rest',
                  'Target',
                  'Kanizsa',
-                 'Bright_square',
-                 'Dark_square']
+                 'Dark_square',
+                 'Bright_square']
 
 # The number of different event types in the event matrix file. For each type
 # a separate EV file will be created.
@@ -46,10 +46,7 @@ lstNamesEventfiles = ['Run_01_eventmatrix',
                       'Run_03_eventmatrix',
                       'Run_04_eventmatrix',
                       'Run_05_eventmatrix',
-                      'Run_06_eventmatrix',
-                      'Run_07_eventmatrix',
-                      'Run_08_eventmatrix',
-                      'Run_09_eventmatrix']
+                      'Run_06_eventmatrix']
 # ------------------------------------------------------------------------------
 
 

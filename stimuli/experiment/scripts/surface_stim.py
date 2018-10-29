@@ -779,11 +779,11 @@ for idx01 in range(varNumEvnts):  #noqa
         # Switch target (show target or not?):
         varSwtTrgt = 0
 
-        # Bright square on dark brackground:
+        # Dark square on bright brackground:
         if (varTmpEvntType == 4):
             objSqrCntr.setFillColor(lstKnzClr)
 
-        # Dark square on bright background:
+        # Bright square on dark background:
         elif (varTmpEvntType == 5):
             objSqrCntr.setFillColor(lstBckgrd)
 
@@ -797,11 +797,11 @@ for idx01 in range(varNumEvnts):  #noqa
                 objKnz03.draw(win=objWin)
                 objKnz04.draw(win=objWin)
 
-            # Draw bright central square (on dark background):
+            # Draw dark square (on bright brackground):
             elif (varTmpEvntType == 4):
                 objSqrCntr.draw(win=objWin)
 
-            # Draw dark central square (on bright background):
+            # Draw bright square (on dark background):
             elif (varTmpEvntType == 5):
                 objSqrFull.draw(win=objWin)
                 objSqrCntr.draw(win=objWin)
