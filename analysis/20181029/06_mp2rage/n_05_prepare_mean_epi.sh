@@ -5,7 +5,7 @@
 # Upsample and smooth (anisotropic diffusion smoothing) the mean EPI image    #
 # before registration of MP2RAGE to mean EPI. The reason for upsampling is    #
 # that the MP2RAGE image is of a higher resolution (0.7 mm iso) than the mean #
-# EPI image (0.8 mm iso). Thus, registration of MP2RAGE to mean EPI without   #
+# EPI image (0.9 mm iso). Thus, registration of MP2RAGE to mean EPI without   #
 # previous upsampling would result in an implicit downsampling and loss of    #
 # information (the image would still have to be upsampled afterwards for      #
 # segmenataion, because segmentation is performed at a high resolution).      #

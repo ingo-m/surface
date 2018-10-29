@@ -255,22 +255,22 @@ date
 #-------------------------------------------------------------------------------
 # ### pRF analysis
 
-echo "---Automatic: Prepare pRF analysis."
-python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
-source ${strPathPrnt}07_pRF/02a_prepare_pRF_config.sh
-date
+#echo "---Automatic: Prepare pRF analysis."
+#python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
+#source ${strPathPrnt}07_pRF/02a_prepare_pRF_config.sh
+#date
 
-echo "---Automatic: Perform pRF analysis with pyprf"
-pyprf -config ${strPathPrnt}07_pRF/02b_pRF_config_sed.csv
-date
+#echo "---Automatic: Perform pRF analysis with pyprf"
+#pyprf -config ${strPathPrnt}07_pRF/02b_pRF_config_sed.csv
+#date
 
-echo "---Automatic: Upsample pRF results."
-source ${strPathPrnt}07_pRF/03_upsample_retinotopy.sh
-date
+#echo "---Automatic: Upsample pRF results."
+#source ${strPathPrnt}07_pRF/03_upsample_retinotopy.sh
+#date
 
-echo "---Automatic: Calculate overlap between voxel pRFs and stimulus."
-python ${strPathPrnt}07_pRF/04_PacMan_pRF_overlap.py
-date
+#echo "---Automatic: Calculate overlap between voxel pRFs and stimulus."
+#python ${strPathPrnt}07_pRF/04_PacMan_pRF_overlap.py
+#date
 #-------------------------------------------------------------------------------
 
 

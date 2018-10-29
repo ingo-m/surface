@@ -21,7 +21,7 @@ strPathOtr = strcat(pacman_data_path, pacman_sub_id, '/nii/mp2rage/03_reg/03_pre
 % Name of the 'SPM batch' to be created:
 strPathBatch = strcat(pacman_data_path, pacman_sub_id, '/nii/mp2rage/03_reg/03_prereg/spm_corr_batch.mat');
 % Resolution of input images in mm (is assumed to be isotropic):
-varRes = 0.4;
+varRes = 0.45;
 %--------------------------------------------------------------------------
 %% Prepare input - referenec image:
 % The cell array with the file name of the mean M0 image:
