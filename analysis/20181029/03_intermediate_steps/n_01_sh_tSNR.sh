@@ -15,13 +15,19 @@ arySessionIDs=(func_01 \
                func_03 \
                func_04 \
                func_05 \
-               func_06)
+               func_06 \
+               prf_01 \
+               prf_02 \
+               prf_03)
 
 # Parent path:
 strPathParent="${pacman_data_path}${pacman_sub_id}/nii/"
 
-# Path to feat directories:
-strPathInput="${strPathParent}feat_level_1_comb/"
+# Path of feat directorie, main experiment:
+strPathInputMain="${strPathParent}feat_level_1_comb/"
+
+# Path of feat directorie, pRF mapping:
+strPathInputPrf="${strPathParent}feat_level_1_prf/"
 
 # Output directory:
 strPathOutput="${strPathParent}func_reg_tsnr/"
@@ -35,7 +41,16 @@ echo "-------------------------------------------------------------------------"
 echo "----- Create 3D tSNR images for all functional time series: -----"
 for index01 in ${arySessionIDs[@]}
 do
-	strTmp01="${strPathInput}${index01}.feat/filtered_func_data"
+
+  # Input directory - main experiment or pRF run? Test whether "prf" substring
+  # is contained in run ID:
+  if [[ "prf" == *"${index01}"* ]];
+  then
+	   strTmp01="${strPathInputPrf}${index01}.feat/filtered_func_data"
+  else
+	   strTmp01="${strPathInputMain}${index01}.feat/filtered_func_data"
+  fi
+
 	strTmp02="${strPathOutput}${index01}_mean.nii"
 	strTmp03="${strPathOutput}${index01}_sd.nii"
 	strTmp04="${strPathOutput}${index01}_tSNR.nii"

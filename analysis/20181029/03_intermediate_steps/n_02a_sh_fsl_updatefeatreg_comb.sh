@@ -31,8 +31,7 @@ aryFeatIDs=(func_01.feat \
             func_03.feat \
             func_04.feat \
             func_05.feat \
-            func_06.feat \
-            func_08.feat)
+            func_06.feat)
 
 # The path of the 'standard' image:
 strPathStd="${strPathParent}func_reg_tsnr/combined_mean.nii.gz"

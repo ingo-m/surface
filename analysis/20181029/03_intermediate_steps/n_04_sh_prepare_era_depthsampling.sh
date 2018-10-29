@@ -23,10 +23,9 @@ arySubIDs=(${pacman_sub_id})
 strIn="${pacman_data_path}SUBJECT_ID/nii/func_reg_averages/"
 
 # Input file names (within parent directory):
-aryNiiIn=(ERA_Control_Dynamic \
-          ERA_PacMan_Dynamic \
-          ERA_PacMan_Dynamic_Long \
-          ERA_PacMan_Static)
+aryNiiIn=(ERA_Bright_square \
+          ERA_Dark_square \
+          ERA_Kanizsa)
 
 # Output parent directory ('SUBJECT_ID' will be replaced):
 strOt="${pacman_data_path}SUBJECT_ID/nii/func_reg_averages/"

@@ -32,19 +32,27 @@ pacman_anly_path = str(os.environ['pacman_anly_path'])
 # Parent directory:
 strPathParent = (pacman_data_path
                  + pacman_sub_id
-                 + '/nii/feat_level_1/')
+                 + '/nii/feat_level_1_comb/')
 
 # List of 4D nii files (location within parent directory):
 lstIn_01 = ['func_01.feat/filtered_func_data.nii.gz',
-            'func_04.feat/filtered_func_data.nii.gz']
+            'func_02.feat/filtered_func_data.nii.gz',
+            'func_03.feat/filtered_func_data.nii.gz',
+            'func_04.feat/filtered_func_data.nii.gz',
+            'func_05.feat/filtered_func_data.nii.gz',
+            'func_06.feat/filtered_func_data.nii.gz']
 
 # Directory containing design matrices (EV files):
-strPathEV = (pacman_anly_path + 'FSL_MRI_Metadata/version_03c/')
+strPathEV = (pacman_anly_path + 'FSL_MRI_Metadata/version_01/')
 
 # List of design matrices (EV files), in the same order as input 4D nii files
 # (location within parent directory):
-lstIn_02 = ['EV_func_01_Stimulus.txt',
-            'EV_func_04_Stimulus.txt']
+lstIn_02 = ['EV_func_01_Bright_square.txt',
+            'EV_func_02_Bright_square.txt',
+            'EV_func_03_Bright_square.txt',
+            'EV_func_04_Bright_square.txt',
+            'EV_func_05_Bright_square.txt',
+            'EV_func_06_Bright_square.txt']
 
 # Output directory:
 strPathOut = (pacman_data_path
@@ -52,10 +60,10 @@ strPathOut = (pacman_data_path
               + '/nii/func_reg_averages/')
 
 # Output file name:
-strOutFileName = 'ERA_PacMan_Dynamic.nii.gz'
+strOutFileName = 'ERA_Bright_square.nii.gz'
 
 # Volume TR of input nii files:
-varTR = 2.079
+varTR = 1.947
 
 # Number of volumes that will be included in the average segment before the
 # onset of the condition block. NOTE: We get the start time and the duration
@@ -66,7 +74,7 @@ varVolsPre = 5.0
 
 # Number of volumes that will be included in the average segment after the
 # end of the condition block:
-varVolsPst = 18.711 / varTR
+varVolsPst = 17.523 / varTR
 
 # Normalise time segments? If True, segments are normalised trial-by-trial;
 # i.e. each time-course segment is divided by its own pre-stimulus baseline
@@ -158,7 +166,7 @@ for index_02 in range(0, varNumIn_01):
                      (strPathParent + lstIn_01[index_02])
                      )
     # Load data of current run into memory:
-    aryTmpRun = niiTmp.get_data()
+    aryTmpRun = niiTmp.get_data().astype(np.float32)
 
     # -------------------------------------------------------------------------
     # *** Preparations after loading the first nii file
@@ -184,7 +192,8 @@ for index_02 in range(0, varNumIn_01):
                                  aryDim[2],
                                  aryDim[3],
                                  varSegDur
-                                 ))
+                                 ),
+                                dtype=np.float32)
 
     # -------------------------------------------------------------------------
     # Array that will be filled with segments (of condition blocks) of the
@@ -195,7 +204,8 @@ for index_02 in range(0, varNumIn_01):
                             aryDim[2],
                             aryDim[3],
                             varSegDur
-                            ))
+                            ),
+                           dtype=np.float32)
 
     # -------------------------------------------------------------------------
     # *** Loop through blocks
@@ -239,7 +249,7 @@ for index_02 in range(0, varNumIn_01):
         # *** Cut segment pertaining to current block
 
         aryTmpBlcks[index_03, :, :, :, :] = \
-            np.copy(aryTmpRun[:, :, :, varTmpStr:varTmpStp])
+            np.copy(aryTmpRun[:, :, :, varTmpStr:varTmpStp]).astype(np.float32)
 
     # -------------------------------------------------------------------------
     # *** Normalisation
@@ -250,11 +260,11 @@ for index_02 in range(0, varNumIn_01):
         aryBse = np.copy(aryTmpBlcks[:, :, :, :,
                                      int(varVolsPre + tplBase[0]):
                                      int(varVolsPre + tplBase[1])]
-                         )
+                         ).astype(np.float32)
 
         # Mean for each voxel over time (i.e. over the pre-stimulus
         # baseline):
-        aryBseMne = np.mean(aryBse, axis=4)
+        aryBseMne = np.mean(aryBse, axis=4).astype(np.float32)
 
         # Get indicies of voxels that have a non-zero prestimulus baseline:
         aryNonZero = np.not_equal(aryBseMne, 0.0)
@@ -262,7 +272,8 @@ for index_02 in range(0, varNumIn_01):
         # Divide all voxels that are non-zero in the pre-stimulus baseline by
         # the prestimulus baseline:
         aryTmpBlcks[aryNonZero] = np.divide(aryTmpBlcks[aryNonZero],
-                                            aryBseMne[aryNonZero, None])
+                                            aryBseMne[aryNonZero, None]
+                                            ).astype(np.float32)
 
     # -------------------------------------------------------------------------
     # *** Save segment
@@ -334,7 +345,7 @@ for index_02 in range(0, varNumIn_01):
     aryTmp = np.true_divide(aryTmp, varTmpNumBlck)
 
     # Append array to list:
-    aryRunsAvrgs[index_02, :, :, :, :] = np.copy(aryTmp)
+    aryRunsAvrgs[index_02, :, :, :, :] = np.copy(aryTmp).astype(np.float32)
 
 # -----------------------------------------------------------------------------
 # *** Calculate average across runs
