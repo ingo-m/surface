@@ -164,16 +164,8 @@ date
 #-------------------------------------------------------------------------------
 # ### First level FEAT
 
-echo "---Automatic: 1st level FSL FEAT with sustained predictors."
-source ${strPathPrnt}02_feat/n_01_feat_level_1_script_parallel.sh
-date
-
-echo "---Automatic: 1st level FSL FEAT with transient predictors."
-source ${strPathPrnt}02_feat/n_02_feat_level_1_script_parallel_trans.sh
-date
-
 echo "---Automatic: 1st level FSL FEAT with sustained and transient predictors."
-source ${strPathPrnt}02_feat/n_03_feat_level_1_script_parallel_comb.sh
+source ${strPathPrnt}02_feat/n_01_feat_level_1_script_parallel_comb.sh
 date
 #-------------------------------------------------------------------------------
 
