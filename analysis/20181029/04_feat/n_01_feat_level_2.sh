@@ -12,9 +12,13 @@ NEW_DATA_PATH="${pacman_data_path}${pacman_sub_id}/"
 NEW_ANALYSIS_PATH="${pacman_anly_path}"
 
 # fsf files:
-aryFsfFiles=(feat_level_2_combined \
-             feat_level_2_sustained \
-             feat_level_2_transient)
+aryFsfFiles=(feat_level_2_bright_square_sst \
+             feat_level_2_bright_square_trn \
+             feat_level_2_dark_square_sst \
+             feat_level_2_dark_square_trn \
+             feat_level_2_kanizsa_sst \
+             feat_level_2_kanizsa_trn \
+             feat_level_2_target)
 
 for index01 in ${aryFsfFiles[@]}
 do
@@ -35,9 +39,12 @@ echo "-----------Second level feat:-----------"
 
 date
 
-feat "${str_path}feat_level_2_combined_sed.fsf"
-feat "${str_path}feat_level_2_sustained_sed.fsf"
-feat "${str_path}feat_level_2_transient_sed.fsf"
+for index01 in ${aryFsfFiles[@]}
+do
+	# Run 2nd level feat analysis:
+	feat "${str_path}${index01}_sed.fsf"
+done
+
 date
 
 echo "done"
