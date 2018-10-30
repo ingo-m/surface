@@ -50,9 +50,11 @@ cp ${strRaw}PROTOCOL_BP_ep3d_bold_func03_RL_pRF_SERIES_030_c32.json ${strFunc}fu
 #------------------------------------------------------------------------------
 # *** Copy metadata for opposite-phase-polarity SE images
 
-# NOTE: SE EPI images were acquired in wrong order for subject 20181029 (i.e.
-#       first R>>L, then L>>R. Instead of adjusting the moco pipeline, images
-#       are switched here, and in the topup datain file.
+# NOTE: For the SE EPI images, the "Invert polarity" flag was "on", and the
+#       actual PE direction is the opposite of what it reads in the file name.
+#       So the image with "RL" in the filename had L>>R PE direction (opposite
+#       of main functional runs); and the image with "LR" in the filename had
+#       R>>L PE direction (same as main functional runs).
 cp ${strRaw}PROTOCOL_cmrr_mbep2d_se_RL_SERIES_005_c32.json ${strSeOp}func_00.json
 cp ${strRaw}PROTOCOL_cmrr_mbep2d_se_LR_SERIES_006_c32.json ${strSe}func_00.json
 #------------------------------------------------------------------------------
