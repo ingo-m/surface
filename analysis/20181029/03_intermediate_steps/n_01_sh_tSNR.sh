@@ -44,7 +44,7 @@ do
 
   # Input directory - main experiment or pRF run? Test whether "prf" substring
   # is contained in run ID:
-  if [[ "prf" == *"${index01}"* ]];
+  if [[ ${index01} == *"prf"* ]];
   then
 	   strTmp01="${strPathInputPrf}${index01}.feat/filtered_func_data"
   else
