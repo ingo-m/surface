@@ -2,7 +2,7 @@
 
 
 ################################################################################
-# Metascript for the ParMan analysis pipeline.                                 #
+# Metascript for the surface analysis pipeline.                                #
 ################################################################################
 
 
@@ -12,7 +12,7 @@
 # Analysis parent directory:
 strPathPrnt="${pacman_anly_path}${pacman_sub_id}/"
 
-echo "-PacMan Analysis Pipleline --- ${pacman_sub_id}"
+echo "-Surface Analysis Pipleline --- ${pacman_sub_id}"
 date
 
 echo "---Automatic: Prepare directory tree"
@@ -25,23 +25,23 @@ else
 	echo "---Automatic: DICOM to nii conversion."
 	source ${strPathPrnt}00_get_data/n_02_sh_dcm2nii.sh
 
-	echo "---Automatic: Export nii to bids."
+	echo "---Automatic: Remove redundant suffix from file name."
 	python ${strPathPrnt}00_get_data/n_03_py_rename.py
 
-	if ${pacman_wait};
-	then
-		echo "---Manual:"
-		echo "   Adjust file names in"
-                echo "   ${strPathPrnt}00_get_data/n_04_sh_export_nii_to_bids.sh"
-		echo "   and in"
-                echo "   ${strPathPrnt}00_get_data/n_05_sh_export_json_to_bids.sh"
-		echo "   Type 'go' to continue"
-		read -r -s -d $'g'
-		read -r -s -d $'o'
-		date
-	else
-		:
-	fi
+	#if ${pacman_wait};
+	#then
+	#	echo "---Manual:"
+	#	echo "   Adjust file names in"
+  #              echo "   ${strPathPrnt}00_get_data/n_04_sh_export_nii_to_bids.sh"
+	#	echo "   and in"
+  #              echo "   ${strPathPrnt}00_get_data/n_05_sh_export_json_to_bids.sh"
+	#	echo "   Type 'go' to continue"
+	#	read -r -s -d $'g'
+	#	read -r -s -d $'o'
+	#	date
+	#else
+	#	:
+	#fi
 fi
 
 if ${pacman_from_bids};
@@ -89,23 +89,23 @@ echo "---Automatic: Prepare moco"
 source ${strPathPrnt}01_preprocessing/n_02c_sh_prepare_moco.sh
 date
 
-if ${pacman_wait};
-then
-	echo "---Manual:"
-	echo "   Prepare reference weights for motion correction of functional"
-	echo "   data and opposite-phase polarity data (based on SE EPI images,"
-	echo "   i.e. ~/func_se/func_00 and ~/func_se_op/func_00) and place"
-	echo "   them at:"
-	echo "       ${pacman_anly_path}${pacman_sub_id}/01_preprocessing/n_03b_${pacman_sub_id}_spm_refweight.nii.gz"
-	echo "   and"
-	echo "       ${pacman_anly_path}${pacman_sub_id}/01_preprocessing/n_03d_${pacman_sub_id}_spm_refweight_op.nii.gz"
-	echo "   Type 'go' to continue"
-	read -r -s -d $'g'
-	read -r -s -d $'o'
-	date
-else
-	:
-fi
+#if ${pacman_wait};
+#then
+#	echo "---Manual:"
+#	echo "   Prepare reference weights for motion correction of functional"
+#	echo "   data and opposite-phase polarity data (based on SE EPI images,"
+#	echo "   i.e. ~/func_se/func_00 and ~/func_se_op/func_00) and place"
+#	echo "   them at:"
+#	echo "       ${pacman_anly_path}${pacman_sub_id}/01_preprocessing/n_03b_${pacman_sub_id}_spm_refweight.nii.gz"
+#	echo "   and"
+#	echo "       ${pacman_anly_path}${pacman_sub_id}/01_preprocessing/n_03d_${pacman_sub_id}_spm_refweight_op.nii.gz"
+#	echo "   Type 'go' to continue"
+#	read -r -s -d $'g'
+#	read -r -s -d $'o'
+#	date
+#else
+#	:
+#fi
 
 # Copy reference weight to spm directory:
 fslchfiletype \
@@ -181,7 +181,7 @@ echo "---Automatic: Prepare 1st level FEAT - rename runs."
 source ${strPathPrnt}02_feat/n_01_rename.sh
 date
 
-echo "---Automatic: 1st level FSL FEAT with sustained and transient predictors."
+echo "---Automatic: 1st level FSL FEAT with sustained & transient predictors."
 source ${strPathPrnt}02_feat/n_02_feat_level_1_script_parallel_comb.sh
 date
 
