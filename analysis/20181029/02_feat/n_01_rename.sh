@@ -22,15 +22,15 @@ strPath="${pacman_data_path}${pacman_sub_id}/nii/func_reg_distcorUnwrp/"
 #-------------------------------------------------------------------------------
 # ### Rename files
 
-mv ${strPath}func_01 ${strPath}prf_01
-mv ${strPath}func_02 ${strPath}prf_02
+mv ${strPath}func_01.nii.gz ${strPath}prf_01.nii.gz
+mv ${strPath}func_02.nii.gz ${strPath}prf_02.nii.gz
 
-mv ${strPath}func_03 ${strPath}func_01
-mv ${strPath}func_04 ${strPath}func_02
-mv ${strPath}func_05 ${strPath}func_03
-mv ${strPath}func_06 ${strPath}func_04
-mv ${strPath}func_07 ${strPath}func_05
-mv ${strPath}func_08 ${strPath}func_06
+mv ${strPath}func_03.nii.gz ${strPath}func_01.nii.gz
+mv ${strPath}func_04.nii.gz ${strPath}func_02.nii.gz
+mv ${strPath}func_05.nii.gz ${strPath}func_03.nii.gz
+mv ${strPath}func_06.nii.gz ${strPath}func_04.nii.gz
+mv ${strPath}func_07.nii.gz ${strPath}func_05.nii.gz
+mv ${strPath}func_08.nii.gz ${strPath}func_06.nii.gz
 
-mv ${strPath}func_09 ${strPath}prf_03
+mv ${strPath}func_09.nii.gz ${strPath}prf_03.nii.gz
 #-------------------------------------------------------------------------------
