@@ -72,9 +72,9 @@ strNiiOt = (pacman_data_path
 # Define the area  of the visual field that was covered by the pRF mapping
 # stimuli (this is the area of the visual field for which pRFs are defined) in
 # degree of visual angle:
-varXmin = -5.19
-varXmax = 5.19
-varXstep = 40.0
+varXmin = -8.3
+varXmax = 8.3
+varXstep = 64.0
 varYmin = -5.19
 varYmax = 5.19
 varYstep = 40.0
@@ -90,11 +90,41 @@ varSdMin = 0.2
 # overlap):
 varSupSmp = 5.0
 
-# Radius of PacMan [degrees of visual angel]:
-varPacRad = 2.75  # Radius of PacMan is 3.75, but we include a safety margin
+# -----------------------------------------------------------------------------
+# Size (diameter) of Kanizsa inducers (Pac-Man) [degree of visual angle]:
+# varKnzSze = 3.0
+#
+# Position (x & y displacement from origin) of Kanizsa inducers (Pac-Man)
+# [degree of visual angle]:
+# varKnzPos = 3.0
+#
+# Limits of central square ROI (avoiding fixation dot):
+# x-limits: -2.25 deg to -0.75 & 0.75 deg to 2.25 deg
+# y-limits: -2.25 deg to -0.75 & 0.75 deg to 2.25 deg
+#
+# Limits of border ROI (border is at 3.0 deg):
+# x-limits: -3.25 deg to -2.75 deg & 2.75 deg to 3.25 deg
+# y-limits: -3.25 deg to -2.75 deg & 2.75 deg to 3.25 deg
+#
+# Limits of background ROI (PacMan inducers extend to +/- 4.5 deg):
+# x-limits: -8.3 deg to -5.0 deg & 5.0 deg to 8.3 deg
+# y-limits: -5.19 deg to 5.19 deg
+# -----------------------------------------------------------------------------
 
-# Safety margin of voxels to exclude around vertical meridian:
-varMrgn = 1.0
+# Limits of central square ROI:
+tplLimCntrX = (-2.25, 2.25)
+tplLimCntrY = (-2.25, 2.25)
+
+# Radius of central region to avoid (fixation dot):
+varFix = 0.25
+
+# Limits of border ROI (border is at 3.0 deg):
+lstLimEdgX = [(-3.25, -2.75), (2.75, 3.25)]
+lstLimEdgY = [(-3.25, -2.75), (2.75, 3.25)]
+
+# Limits of background ROI (PacMan inducers extend to +/- 4.5 deg):
+lstLimBckX = [(-8.3, -5.0),  (5.0, 8.3)]
+lstLimBckY = [(-5.19, 5.19), (-5.19, 5.19)]
 
 # Overlap is calculated with an R2 value above the following threshold:
 varThrR = 0.1
@@ -102,7 +132,7 @@ varThrR = 0.1
 # Overlap criteria. Voxels are included in the mask if the overlap between
 # their population receptive fiel and the annulus is greater than or equal to
 # this value [percent].
-lstOvrlp = [40, 50, 60, 80, 95]
+lstOvrlp = [50, 75, 90, 95]
 
 # Number of processes to run in parallel:
 varPar = 11
@@ -120,7 +150,7 @@ varTme01 = time.time()
 
 
 def fncLoadNii(strPathIn):
-    """Function for loading nii files."""
+    """Load nii files."""
     print(('---------Loading: ' + strPathIn))
     # Load nii file (this doesn't load the data into memory yet):
     niiTmp = nib.load(strPathIn)
@@ -152,7 +182,7 @@ def fncPrfOvrlp(idxPrc,
                 varSdMin,
                 varPar,
                 queOut):
-    """Function for calculating stimulus-pRF overlap."""
+    """Calculate stimulus-pRF overlap."""
     # Number of voxels in this chunk of data:
     varNumVoxChnk = aryNiiXChnk.size
 
@@ -239,7 +269,7 @@ def fncPrfOvrlp(idxPrc,
             aryTmpGaus = np.exp(-aryTmpGaus)
 
             # We calculate how much of the pRF area of the current voxel is
-            # contained within the annulus. We start by multipying the matrix
+            # contained within the stimulus. We start by multipying the matrix
             # representing the pRF with the matrix representing the annulus:
             aryTmpOvrlp = aryTmpGaus * aryLgcStim
 
@@ -323,19 +353,76 @@ print('------Preparing arrays')
 aryDist = np.sqrt(((arySpaceXcrt - 0) ** 2 + (arySpaceYcrt - 0) ** 2),
                   dtype=np.float32)
 
-# Matrices representing the relevant regions of the PacMan stimulus
+# Matrices representing the relevant regions of the stimulus
 
-# Array for left (in terms of visual space) region of interest:
-aryLgcPacLft = np.logical_and(
-                              np.less(aryDist, varPacRad),
-                              np.less(arySpaceXcrt, (-1.0 * varMrgn))
-                              ).astype(np.float64)
+# Mask for central square:
+aryLgcCntr = np.logical_and(
+                            np.logical_and(
+                                           np.greater(arySpaceXcrt,
+                                                      tplLimCntrX[0]),
+                                           np.less(arySpaceXcrt,
+                                                   tplLimCntrX[1])
+                                           ),
+                            np.logical_and(
+                                           np.greater(arySpaceYcrt,
+                                                      tplLimCntrY[0]),
+                                           np.less(arySpaceYcrt,
+                                                   tplLimCntrY[1])
+                                           )
+                            ).astype(np.float64)
 
-# Array for right (in terms of visual space) region of interest:
-aryLgcPacRgh = np.logical_and(
-                              np.less(aryDist, varPacRad),
-                              np.greater(arySpaceXcrt, (1.0 * varMrgn))
-                              ).astype(np.float64)
+# Avoid fixation dot:
+aryLgcCntr[aryDist < varFix] = 0.0
+
+# Mask for edge - restrict outer regions:
+aryLgcEdg01 = np.logical_and(
+                             np.greater(arySpaceXcrt,
+                                        lstLimEdgX[0][0]),
+                             np.less(arySpaceXcrt,
+                                     lstLimEdgX[1][1])
+                             )
+aryLgcEdg02 = np.logical_and(
+                             np.greater(arySpaceYcrt,
+                                        lstLimEdgY[0][0]),
+                             np.less(arySpaceYcrt,
+                                     lstLimEdgY[1][1])
+                             )
+aryLgcEdg03 = np.logical_and(aryLgcEdg01, aryLgcEdg02).astype(np.float64)
+
+# Mask for edge - restrict inner regions:
+aryLgcEdg04 = np.logical_and(
+                             np.greater(arySpaceXcrt,
+                                        lstLimEdgX[0][1]),
+                             np.less(arySpaceXcrt,
+                                     lstLimEdgX[1][0])
+                             )
+aryLgcEdg05 = np.logical_and(
+                             np.greater(arySpaceYcrt,
+                                        lstLimEdgY[0][1]),
+                             np.less(arySpaceYcrt,
+                                     lstLimEdgY[1][0])
+                             )
+aryLgcEdg06 = np.logical_and(aryLgcEdg04, aryLgcEdg05).astype(np.float64)
+
+# Final edge ROI:
+aryLgcEdg = np.subtract(aryLgcEdg03, aryLgcEdg06)
+
+# Mask for periphery (left and right edges of screen):
+aryLgcBck = np.logical_or(
+                          np.logical_and(
+                                         np.greater(arySpaceXcrt,
+                                                    lstLimBckX[0][0]),
+                                         np.less(arySpaceXcrt,
+                                                 lstLimBckX[0][1])
+                                         ),
+                          np.logical_and(
+                                         np.greater(arySpaceXcrt,
+                                                    lstLimBckX[1][0]),
+                                         np.less(arySpaceXcrt,
+                                                 lstLimBckX[1][1])
+                                         ),
+                          ).astype(np.float64)
+
 
 # Create matrix that will contain the overlap ratio for each voxel, for the
 # right and the left side of the PacMan stimulus:
