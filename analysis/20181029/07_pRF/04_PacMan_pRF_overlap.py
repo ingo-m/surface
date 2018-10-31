@@ -8,7 +8,7 @@ population receptive field mapping analysis, and to create new nii files
 containing information about the overlap of the pRFs and a visual stimulus.
 """
 
-# Part of PacMan library
+# Part of Surface library
 # Copyright (C) 2016  Ingo Marquardt
 #
 # This program is free software: you can redistribute it and/or modify it
@@ -423,18 +423,6 @@ aryLgcBck = np.logical_or(
                                          ),
                           ).astype(np.float64)
 
-
-# Create matrix that will contain the overlap ratio for each voxel, for the
-# right and the left side of the PacMan stimulus:
-# aryRatioLft = np.zeros(aryNiiR2.shape, dtype=np.float32)
-# aryRatioRgh = np.zeros(aryNiiR2.shape, dtype=np.float32)
-
-# Create matrix that will contain the binary map for pRF centre overlap with
-# stimulus (i.e. whether the pRF centre is on the stimulus), for the right and
-# the leftr side of the PacMan stimulus:
-# aryCntrLft = np.zeros(aryNiiR2.shape, dtype=np.float32)
-# aryCntrRgh = np.zeros(aryNiiR2.shape, dtype=np.float32)
-
 # Vectors with x- and y-coordinates represented in the super-sampled model of
 # the visual space:
 vecXcords = np.linspace(varXmin, varXmax, (varXstep * varSupSmp))
@@ -446,14 +434,19 @@ vecNiiShp = aryNiiX.shape
 
 
 # *****************************************************************************
-# *** Loop through hemifields (left & right)
+# *** Loop through ROIs (central square, edge, periphery)
 
-for idxHmf in range(2):  #noqa
+for idxRoi in range(3):  #noqa
 
-    if idxHmf == 0:
-        aryLgcStim = aryLgcPacLft
-    elif idxHmf == 1:
-        aryLgcStim = aryLgcPacRgh
+    if idxRoi == 0:
+        # Central square
+        aryLgcStim = aryLgcCntr
+    elif idxRoi == 1:
+        # Edge
+        aryLgcStim = aryLgcEdg
+    elif idxRoi == 2:
+        # Periphery (left and right ends of screen)
+        aryLgcStim = aryLgcBck
 
     # *************************************************************************
     # *** Calculation of stimulus-pRF overlap
@@ -654,11 +647,15 @@ for idxHmf in range(2):  #noqa
                                   header=hdrNiiX
                                   )
 
-    # File suffix depending on hemifield:
-    if idxHmf == 0:
-        strHmf = 'left'
-    elif idxHmf == 1:
-        strHmf = 'right'
+    if idxRoi == 0:
+        # Central square
+        strHmf = 'centre'
+    elif idxRoi == 1:
+        # Edge
+        strHmf = 'edge'
+    elif idxRoi == 2:
+        # Periphery (left and right ends of screen)
+        strHmf = 'background'
 
     # Save nii to disk:
     nib.save(niiOtRatio, (strNiiOt + 'ovrlp_ratio_' + strHmf + '.nii.gz'))
