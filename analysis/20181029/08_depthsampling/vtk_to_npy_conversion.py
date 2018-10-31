@@ -37,14 +37,12 @@ pacman_data_path = str(os.environ['pacman_data_path'])
 pacman_sub_id = str(os.environ['pacman_sub_id'])
 
 # List of directories with vtk files to be converted:
-lstDir = [(pacman_data_path + pacman_sub_id + '/cbs/lh_era/control_dynamic'),
-          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/pacman_dynamic'),
-          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/pacman_dynamic_long'),
-          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/pacman_static'),
-          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/control_dynamic'),
-          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/pacman_dynamic'),
-          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/pacman_dynamic_long'),
-          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/pacman_static')]
+lstDir = [(pacman_data_path + pacman_sub_id + '/cbs/lh_era/bright_square'),
+          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/dark_square'),
+          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/kanizsa'),
+          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/bright_square'),
+          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/dark_square'),
+          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/kanizsa')]
 
 # Number of cortical depths:
 varNumDpth = 11

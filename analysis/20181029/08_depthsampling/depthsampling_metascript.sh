@@ -40,7 +40,6 @@ aryCbs=(cbs_lh_glm_prf.LayoutXML \
 # Names of python scripts to run:
 aryPy=(renameJistOutput.py \
        renameJistOutput_ert.py \
-       renameJistOutput_ert_long.py \
        postprocess_retinotopy_vtk_lh.py \
        postprocess_retinotopy_vtk_rh.py \
        vtk_to_npy_conversion.py)
