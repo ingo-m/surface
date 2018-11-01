@@ -3,14 +3,14 @@
 ####################################
 
 # Pull neurodocker image (for creating docker images):
-docker pull kaczmarj/neurodocker:0.4.1
+docker pull kaczmarj/neurodocker:v0.3.2
 
 # For info:
-docker run --rm kaczmarj/neurodocker:0.4.1 --help
+docker run --rm kaczmarj/neurodocker:v0.3.2 --help
 
 # Create dockerfile (using neurodocker image):
 docker run \
-    --rm kaczmarj/neurodocker:0.4.1 \
+    --rm kaczmarj/neurodocker:v0.3.2 \
     generate \
     -b debian:jessie \
     -p apt \
