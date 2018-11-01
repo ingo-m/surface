@@ -255,14 +255,18 @@ date
 #-------------------------------------------------------------------------------
 # ### pRF analysis
 
-#echo "---Automatic: Prepare pRF analysis."
-#python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
-#source ${strPathPrnt}07_pRF/02a_prepare_pRF_config.sh
-#date
+echo "---Automatic: Prepare pRF analysis."
+python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
+source ${strPathPrnt}07_pRF/02a_prepare_pRF_config.sh
+date
 
-#echo "---Automatic: Perform pRF analysis with pyprf"
-#pyprf -config ${strPathPrnt}07_pRF/02b_pRF_config_sed.csv
-#date
+echo "---Automatic: Perform pRF analysis with pyprf"
+# Activate pyprf conda environment:
+source activate py_pyprf
+pyprf -config ${strPathPrnt}07_pRF/02b_pRF_config_sed.csv
+# Switch back to default conda environment:
+source activate py_main
+date
 
 echo "---Automatic: Upsample pRF results."
 source ${strPathPrnt}07_pRF/03_upsample_retinotopy.sh
