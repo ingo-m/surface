@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-03-22 15:44:34
+# Timestamp: 2018-11-01 17:50:34
 
 FROM debian:jessie
 
@@ -117,7 +117,7 @@ RUN echo "Downloading Miniconda installer ..." \
 #-------------------------
 # Create conda environment
 #-------------------------
-RUN conda create -y -q --name py_main -c conda-forge python=2.7 \
+RUN conda create -y -q --name py_main -c conda-forge python=3.6 \
                                                      numpy \
                                                      scipy \
                                                      pip \
@@ -132,11 +132,19 @@ RUN conda create -y -q --name py_segmentator -c conda-forge python=2.7 \
                                                             pip \
     && sync && conda clean -tipsy && sync
 
+#-------------------------
+# Create conda environment
+#-------------------------
+RUN conda create -y -q --name py_pyprf -c conda-forge python=3.6 \
+                                                      pip \
+    && sync && conda clean -tipsy && sync \
+    && sed -i '$isource activate py_pyprf' $ND_ENTRYPOINT
+
 # User-defined BASH instruction
 RUN bash -c "mkdir /home/john/github                 && cd /home/john/github                 && git clone https://github.com/ingo-m/segmentator.git                 && cd /home/john/github/segmentator                 && git checkout docker-EED                 && git checkout a77bcda769e9f252db8c6c9cf74047d901f4eca1                 && source activate py_segmentator                 && pip install -r requirements.txt                 && python setup.py install"
 
 # User-defined BASH instruction
-RUN bash -c "source activate py_main && pip install pyprf"
+RUN bash -c "source activate py_pyprf                 && pip install numpy                 && pip install pyprf"
 
 # User-defined BASH instruction
 RUN bash -c "echo \"export USER=john\" > /home/john/.bashrc"
@@ -221,7 +229,7 @@ RUN echo '{ \
     \n      "miniconda", \
     \n      { \
     \n        "env_name": "py_main", \
-    \n        "conda_install": "python=2.7 numpy scipy pip scikit-image", \
+    \n        "conda_install": "python=3.6 numpy scipy pip scikit-image", \
     \n        "conda_opts": "-c conda-forge", \
     \n        "activate": true \
     \n      } \
@@ -236,12 +244,21 @@ RUN echo '{ \
     \n      } \
     \n    ], \
     \n    [ \
+    \n      "miniconda", \
+    \n      { \
+    \n        "env_name": "py_pyprf", \
+    \n        "conda_install": "python=3.6 pip", \
+    \n        "conda_opts": "-c conda-forge", \
+    \n        "activate": true \
+    \n      } \
+    \n    ], \
+    \n    [ \
     \n      "run_bash", \
     \n      "mkdir /home/john/github                 && cd /home/john/github                 && git clone https://github.com/ingo-m/segmentator.git                 && cd /home/john/github/segmentator                 && git checkout docker-EED                 && git checkout a77bcda769e9f252db8c6c9cf74047d901f4eca1                 && source activate py_segmentator                 && pip install -r requirements.txt                 && python setup.py install" \
     \n    ], \
     \n    [ \
     \n      "run_bash", \
-    \n      "source activate py_main && pip install pyprf" \
+    \n      "source activate py_pyprf                 && pip install numpy                 && pip install pyprf" \
     \n    ], \
     \n    [ \
     \n      "run_bash", \
@@ -288,6 +305,6 @@ RUN echo '{ \
     \n      "/home/john" \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-03-22 15:44:34", \
+    \n  "generation_timestamp": "2018-11-01 17:50:34", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
