@@ -1,0 +1,87 @@
+######################################
+### Prepare CBS tools docker image ###
+######################################
+
+# As of March 2018, CBS tools still needs to be installed manually using the
+# mipav Java GUI. Therefore, we create a debian docker image using 
+# `Dockerfile_CBS.txt`, and manually install CBS tools and its dependencies
+# in the image. Afterwards, the resulting container is commited into the final
+# image.
+
+# Build image from dockerfile:
+cd /home/john/PhD/GitHub/PacMan/docker
+docker build -t dockerimage_cbs -f /home/john/PhD/GitHub/PacMan/docker/Dockerfile_CBS.txt .
+
+# Enable x11 clients (at the host terminal)
+xhost +local:all
+
+
+# Install mipav (using the GUI):
+docker run -it --rm \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /media/sf_D_DRIVE/Tools/mipav/mipav/v7p3p0:/home/john/Downloads/mipav:ro \
+    dockerimage_cbs bash
+
+# In order for the container not to shut down before it can be committed, we
+# need to call the installation script from command line within the terminal:
+/home/john/Downloads/mipav/installMIPAV.bin
+# Use default options; expect for memory allocation, use 16000 MB.
+
+# FROM A SEPARATE TERMINAL AT THE HOST, check the ID of the active container:
+docker ps -a
+
+# Commit the active container to a new image:
+docker commit a32788c9c840 dockerimage_cbs_tmp
+
+# Exit the docker container:
+exit
+
+# Install CBS tools, JIST, and TOADS-CRUISE:
+docker run -it --rm \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /media/sf_D_DRIVE/Tools/mipav/plugins:/home/john/Downloads/plugins:ro \
+    dockerimage_cbs_tmp bash
+
+/home/john/mipav/mipav
+
+# In the GUI, go to "Plugins" > "Install Plugin". Select the "Browse" buttom and
+# select the directory with the three plugin files downloaded earlier (i.e.
+# "/home/john/Downloads/plugins/"). The three files should show up on
+# the left. Select the three files, and click the right arrow in the centre to
+# move them to the right. Click the "Install Plugin(s)" button at the bottom of
+# the window. The installation may take a few seconds. There may be a success
+# message ("The following plugins were successfully installed to
+# /home/john/mipav/plugins/: ..."), or an error message. If there is an error
+# message, ignore it.
+
+# Create library folder:
+mkdir /home/john/mipav/my_library
+
+# Configure CBS tools:
+/home/john/mipav/mipav
+
+# In the GUI, select "Plugins" > "JIST" > "JISTLayoutTool". A new window will
+# open; it will ask you to select a library directory. Specify the empty
+# directory just created ("/home/john/mipav/my_library"). JIST will be allowed
+# to store a cache of module definitions here.
+
+# In the new window which opened, go to "Project" > "Rebuild Library". When asked
+# whether to replace and recreate libraries, select "Yes". This process should
+# take about a minute. 
+
+# Create symbolic link:
+sudo ln -s /home/john/mipav/mipav /usr/local/bin/mipav
+
+# FROM A SEPARATE TERMINAL AT THE HOST, check the ID of the active container:
+docker ps -a
+
+# Commit the active container, e.g.:
+docker commit fd62205b8e96 dockerimage_cbs
+
+# Exit the docker container:
+exit
+
+# Save image to tar file:
+docker save dockerimage_cbs -o /media/sf_D_DRIVE/MRI_Data_PhD/05_PacMan/Docker_Metadata/dockerimage_cbs.tar
