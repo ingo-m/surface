@@ -72,5 +72,5 @@ docker run -it --rm \
     -e pacman_wait \
     -e pacman_cpu \
     -e USER \
-    dockerimage_pacman_jessie ${pacman_anly_path}${pacman_sub_id}/metascript_02.sh
+    dockerimage_surface_jessie ${pacman_anly_path}${pacman_sub_id}/metascript_02.sh
 #-------------------------------------------------------------------------------
