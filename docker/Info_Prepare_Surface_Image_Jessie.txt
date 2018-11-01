@@ -99,15 +99,15 @@ ENV MATLABCMD=/opt/mcr/v85/toolbox/matlab \
 ```
 
 # Build image from dockerfile:
-cd /home/john/PhD/GitHub/PacMan/docker
-docker build -t dockerimage_pacman_jessie -f /home/john/PhD/GitHub/PacMan/docker/Dockerfile_PacMan_Jessie.txt .
+cd /home/john/PhD/GitLab/surface/docker
+docker build -t dockerimage_surface_jessie -f /home/john/PhD/GitLab/surface/docker/Dockerfile_Surface_Jessie.txt .
 
 # Run docker from image with shared folders (read-only, just for checking
 # whether the image can be run):
 docker run -it --rm \
     -v /media/:/media/:ro \
-    -v /home/john/PhD/GitHub/PacMan/analysis/:/home/john/PhD/GitHub/PacMan/analysis/:ro \
-    dockerimage_pacman_jessie bash
+    -v /home/john/PhD/GitLab/surface/analysis/:/home/john/PhD/GitLab/surface/analysis/:ro \
+    dockerimage_surface_jessie bash
 
 # Save image to tar file:
-docker save -o /media/sf_D_DRIVE/MRI_Data_PhD/05_PacMan/Docker_Metadata/dockerimage_pacman_jessie.tar dockerimage_pacman_jessie
+docker save -o /media/sf_D_DRIVE/MRI_Data_PhD/09_surface/Docker_Metadata/dockerimage_surface_jessie.tar dockerimage_surface_jessie
