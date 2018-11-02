@@ -43,7 +43,7 @@ docker run \
                 && pip install pyprf" \
     --miniconda \
         env_name="py_main" \
-        conda_install="python=3.6 numpy scipy pip scikit-image nibabel" \
+        conda_install="python=2.7 numpy scipy pip scikit-image nibabel" \
         conda_opts="-c conda-forge" \
         activate=True \
     --run-bash "echo \"export USER=john\" > /home/john/.bashrc" \

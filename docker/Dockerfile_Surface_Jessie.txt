@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-11-02 13:23:36
+# Timestamp: 2018-11-02 15:32:06
 
 FROM debian:jessie
 
@@ -137,7 +137,7 @@ RUN bash -c "source activate py_pyprf                 && pip install numpy      
 #-------------------------
 # Create conda environment
 #-------------------------
-RUN conda create -y -q --name py_main -c conda-forge python=3.6 \
+RUN conda create -y -q --name py_main -c conda-forge python=2.7 \
                                                      numpy \
                                                      scipy \
                                                      pip \
@@ -255,7 +255,7 @@ RUN echo '{ \
     \n      "miniconda", \
     \n      { \
     \n        "env_name": "py_main", \
-    \n        "conda_install": "python=3.6 numpy scipy pip scikit-image nibabel", \
+    \n        "conda_install": "python=2.7 numpy scipy pip scikit-image nibabel", \
     \n        "conda_opts": "-c conda-forge", \
     \n        "activate": true \
     \n      } \
@@ -305,6 +305,6 @@ RUN echo '{ \
     \n      "/home/john" \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-11-02 13:23:36", \
+    \n  "generation_timestamp": "2018-11-02 15:32:06", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
