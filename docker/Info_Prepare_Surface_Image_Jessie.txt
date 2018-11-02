@@ -20,11 +20,6 @@ docker run \
     --add-to-entrypoint "source /etc/fsl/5.0/fsl.sh" \
     --user=john \
     --miniconda \
-        env_name="py_main" \
-        conda_install="python=3.6 numpy scipy pip scikit-image" \
-        conda_opts="-c conda-forge" \
-        activate=True \
-    --miniconda \
         env_name="py_segmentator" \
         conda_install="python=2.7 pip" \
         conda_opts="-c conda-forge" \
@@ -33,7 +28,7 @@ docker run \
         env_name="py_pyprf" \
         conda_install="python=3.6 pip" \
         conda_opts="-c conda-forge" \
-        activate=True \
+        activate=False \
     --run-bash "mkdir /home/john/github \
                 && cd /home/john/github \
                 && git clone https://github.com/ingo-m/segmentator.git \
@@ -46,7 +41,11 @@ docker run \
     --run-bash "source activate py_pyprf \
                 && pip install numpy \
                 && pip install pyprf" \
-    --run-bash "source activate py_main" \
+    --miniconda \
+        env_name="py_main" \
+        conda_install="python=3.6 numpy scipy pip scikit-image nibabel" \
+        conda_opts="-c conda-forge" \
+        activate=True \
     --run-bash "echo \"export USER=john\" > /home/john/.bashrc" \
     --run-bash "echo \"export USER=john\" > /home/john/.profile" \
     --run-bash "echo \"export OPENBLAS_NUM_THREADS=1\" >> /home/john/.bashrc" \
