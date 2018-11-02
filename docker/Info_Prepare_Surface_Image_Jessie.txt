@@ -46,7 +46,7 @@ docker run \
     --run-bash "source activate py_pyprf \
                 && pip install numpy \
                 && pip install pyprf" \
-    --run-bash "source activate py_main"
+    --run-bash "source activate py_main" \
     --run-bash "echo \"export USER=john\" > /home/john/.bashrc" \
     --run-bash "echo \"export USER=john\" > /home/john/.profile" \
     --run-bash "echo \"export OPENBLAS_NUM_THREADS=1\" >> /home/john/.bashrc" \
