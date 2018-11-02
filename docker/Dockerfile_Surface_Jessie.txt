@@ -5,7 +5,7 @@
 # pull request on our GitHub repository:
 #     https://github.com/kaczmarj/neurodocker
 #
-# Timestamp: 2018-11-02 12:16:28
+# Timestamp: 2018-11-02 13:23:36
 
 FROM debian:jessie
 
@@ -117,17 +117,6 @@ RUN echo "Downloading Miniconda installer ..." \
 #-------------------------
 # Create conda environment
 #-------------------------
-RUN conda create -y -q --name py_main -c conda-forge python=3.6 \
-                                                     numpy \
-                                                     scipy \
-                                                     pip \
-                                                     scikit-image \
-    && sync && conda clean -tipsy && sync \
-    && sed -i '$isource activate py_main' $ND_ENTRYPOINT
-
-#-------------------------
-# Create conda environment
-#-------------------------
 RUN conda create -y -q --name py_segmentator -c conda-forge python=2.7 \
                                                             pip \
     && sync && conda clean -tipsy && sync
@@ -137,8 +126,7 @@ RUN conda create -y -q --name py_segmentator -c conda-forge python=2.7 \
 #-------------------------
 RUN conda create -y -q --name py_pyprf -c conda-forge python=3.6 \
                                                       pip \
-    && sync && conda clean -tipsy && sync \
-    && sed -i '$isource activate py_pyprf' $ND_ENTRYPOINT
+    && sync && conda clean -tipsy && sync
 
 # User-defined BASH instruction
 RUN bash -c "mkdir /home/john/github                 && cd /home/john/github                 && git clone https://github.com/ingo-m/segmentator.git                 && cd /home/john/github/segmentator                 && git checkout docker-EED                 && git checkout a77bcda769e9f252db8c6c9cf74047d901f4eca1                 && source activate py_segmentator                 && pip install -r requirements.txt                 && python setup.py install"
@@ -146,8 +134,17 @@ RUN bash -c "mkdir /home/john/github                 && cd /home/john/github    
 # User-defined BASH instruction
 RUN bash -c "source activate py_pyprf                 && pip install numpy                 && pip install pyprf"
 
-# User-defined BASH instruction
-RUN bash -c "source activate py_main"
+#-------------------------
+# Create conda environment
+#-------------------------
+RUN conda create -y -q --name py_main -c conda-forge python=3.6 \
+                                                     numpy \
+                                                     scipy \
+                                                     pip \
+                                                     scikit-image \
+                                                     nibabel \
+    && sync && conda clean -tipsy && sync \
+    && sed -i '$isource activate py_main' $ND_ENTRYPOINT
 
 # User-defined BASH instruction
 RUN bash -c "echo \"export USER=john\" > /home/john/.bashrc"
@@ -231,15 +228,6 @@ RUN echo '{ \
     \n    [ \
     \n      "miniconda", \
     \n      { \
-    \n        "env_name": "py_main", \
-    \n        "conda_install": "python=3.6 numpy scipy pip scikit-image", \
-    \n        "conda_opts": "-c conda-forge", \
-    \n        "activate": true \
-    \n      } \
-    \n    ], \
-    \n    [ \
-    \n      "miniconda", \
-    \n      { \
     \n        "env_name": "py_segmentator", \
     \n        "conda_install": "python=2.7 pip", \
     \n        "conda_opts": "-c conda-forge", \
@@ -252,7 +240,7 @@ RUN echo '{ \
     \n        "env_name": "py_pyprf", \
     \n        "conda_install": "python=3.6 pip", \
     \n        "conda_opts": "-c conda-forge", \
-    \n        "activate": true \
+    \n        "activate": false \
     \n      } \
     \n    ], \
     \n    [ \
@@ -264,8 +252,13 @@ RUN echo '{ \
     \n      "source activate py_pyprf                 && pip install numpy                 && pip install pyprf" \
     \n    ], \
     \n    [ \
-    \n      "run_bash", \
-    \n      "source activate py_main" \
+    \n      "miniconda", \
+    \n      { \
+    \n        "env_name": "py_main", \
+    \n        "conda_install": "python=3.6 numpy scipy pip scikit-image nibabel", \
+    \n        "conda_opts": "-c conda-forge", \
+    \n        "activate": true \
+    \n      } \
     \n    ], \
     \n    [ \
     \n      "run_bash", \
@@ -312,6 +305,6 @@ RUN echo '{ \
     \n      "/home/john" \
     \n    ] \
     \n  ], \
-    \n  "generation_timestamp": "2018-11-02 12:16:28", \
+    \n  "generation_timestamp": "2018-11-02 13:23:36", \
     \n  "neurodocker_version": "0.3.2" \
     \n}' > /neurodocker/neurodocker_specs.json
