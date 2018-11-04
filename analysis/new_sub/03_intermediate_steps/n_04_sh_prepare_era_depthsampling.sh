@@ -24,7 +24,7 @@ strIn="${pacman_data_path}SUBJECT_ID/nii/func_reg_averages/"
 
 # Input file names (within parent directory):
 aryNiiIn=(ERA_Bright_square \
-          ERA_Dark_square \
+          ERA_Kanizsa_rotated \
           ERA_Kanizsa)
 
 # Output parent directory ('SUBJECT_ID' will be replaced):

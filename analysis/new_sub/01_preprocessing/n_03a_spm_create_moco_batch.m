@@ -59,8 +59,8 @@ clear matlabbatch;
 % Here we determine the settings for the SPM registrations. See SPM manual
 % for details. First, the parameters for the estimation:
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.quality = 1.0;
-matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.sep = 0.9;
-matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.fwhm = 1.8;
+matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.sep = 0.8;
+matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.fwhm = 1.6;
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.rtm = 1;
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.interp = 7;
 matlabbatch{1}.spm.spatial.realign.estwrite.eoptions.wrap = [0 0 0];

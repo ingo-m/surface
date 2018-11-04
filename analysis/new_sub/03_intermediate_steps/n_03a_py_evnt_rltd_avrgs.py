@@ -43,7 +43,7 @@ lstIn_01 = ['func_01.feat/filtered_func_data.nii.gz',
             'func_06.feat/filtered_func_data.nii.gz']
 
 # Directory containing design matrices (EV files):
-strPathEV = (pacman_anly_path + 'FSL_MRI_Metadata/version_01/')
+strPathEV = (pacman_anly_path + 'FSL_MRI_Metadata/version_02/')
 
 # List of design matrices (EV files), in the same order as input 4D nii files
 # (location within parent directory):
@@ -63,7 +63,7 @@ strPathOut = (pacman_data_path
 strOutFileName = 'ERA_Bright_square.nii.gz'
 
 # Volume TR of input nii files:
-varTR = 1.947
+varTR = 2.079
 
 # Number of volumes that will be included in the average segment before the
 # onset of the condition block. NOTE: We get the start time and the duration
@@ -74,7 +74,7 @@ varVolsPre = 5.0
 
 # Number of volumes that will be included in the average segment after the
 # end of the condition block:
-varVolsPst = 17.523 / varTR
+varVolsPst = 9.0
 
 # Normalise time segments? If True, segments are normalised trial-by-trial;
 # i.e. each time-course segment is divided by its own pre-stimulus baseline

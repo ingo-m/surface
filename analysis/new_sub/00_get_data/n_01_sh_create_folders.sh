@@ -157,13 +157,13 @@ then
 	mkdir "${str_cbs}/lh"
 	mkdir "${str_cbs}/lh_era"
 	mkdir "${str_cbs}/lh_era/kanizsa"
-	mkdir "${str_cbs}/lh_era/dark_square"
+	mkdir "${str_cbs}/lh_era/kanizsa_rotated"
 	mkdir "${str_cbs}/lh_era/bright_square"
 
 	mkdir "${str_cbs}/rh"
 	mkdir "${str_cbs}/rh_era"
   mkdir "${str_cbs}/rh_era/kanizsa"
-	mkdir "${str_cbs}/rh_era/dark_square"
+	mkdir "${str_cbs}/rh_era/kanizsa_rotated"
 	mkdir "${str_cbs}/rh_era/bright_square"
 
 else
