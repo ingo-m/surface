@@ -23,7 +23,7 @@ pacman_anly_path = '/home/john/PhD/GitLab/surface/analysis/'
 
 # Input directory:
 strPathInput = (pacman_anly_path
-                + 'FSL_MRI_Metadata/version_01_transients/')
+                + 'FSL_MRI_Metadata/version_02_transients/')
 
 # Output directory:
 strPathOutput = strPathInput
@@ -39,7 +39,7 @@ strFleNme = 'Run_{}_eventmatrix.txt'
 lstEventTypes = ['Rest',
                  'Target',
                  'Kanizsa',
-                 'Dark_square',
+                 'Kanizsa_rotated',
                  'Bright_square']
 
 # List of runs (excluding pRF mapping runs):
