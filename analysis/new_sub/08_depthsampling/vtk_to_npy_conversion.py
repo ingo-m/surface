@@ -38,10 +38,10 @@ pacman_sub_id = str(os.environ['pacman_sub_id'])
 
 # List of directories with vtk files to be converted:
 lstDir = [(pacman_data_path + pacman_sub_id + '/cbs/lh_era/bright_square'),
-          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/dark_square'),
+          (pacman_data_path + pacman_sub_id + '/cbs/lh_era/kanizsa_rotated'),
           (pacman_data_path + pacman_sub_id + '/cbs/lh_era/kanizsa'),
           (pacman_data_path + pacman_sub_id + '/cbs/rh_era/bright_square'),
-          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/dark_square'),
+          (pacman_data_path + pacman_sub_id + '/cbs/rh_era/kanizsa_rotated'),
           (pacman_data_path + pacman_sub_id + '/cbs/rh_era/kanizsa')]
 
 # Number of cortical depths:
