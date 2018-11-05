@@ -14,8 +14,8 @@ NEW_ANALYSIS_PATH="${pacman_anly_path}"
 # fsf files:
 aryFsfFiles=(feat_level_2_bright_square_sst \
              feat_level_2_bright_square_trn \
-             feat_level_2_dark_square_sst \
-             feat_level_2_dark_square_trn \
+             feat_level_2_kanizsa_rotated_sst \
+             feat_level_2_kanizsa_rotated_trn \
              feat_level_2_kanizsa_sst \
              feat_level_2_kanizsa_trn \
              feat_level_2_target)

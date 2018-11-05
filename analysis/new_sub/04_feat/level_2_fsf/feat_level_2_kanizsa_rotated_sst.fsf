@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 0
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "PLACEHOLDER_FOR_DATA_PATHnii/feat_level_2_comb/feat_level_2_dark_square_sst"
+set fmri(outputdir) "PLACEHOLDER_FOR_DATA_PATHnii/feat_level_2_comb/feat_level_2_kanizsa_rotated_sst"
 
 # TR(s)
 set fmri(tr) 3

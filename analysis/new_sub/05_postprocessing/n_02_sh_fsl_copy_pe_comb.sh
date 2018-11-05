@@ -14,8 +14,8 @@ strPathParent01="${pacman_data_path}${pacman_sub_id}/nii/feat_level_2_comb/"
 # Order of conditions (sst = sustained, trn = transient):
 #     bright_square_sst
 #     bright_square_trn
-#     dark_square_sst
-#     dark_square_trn
+#     kanizsa_rotated_sst
+#     kanizsa_rotated_trn
 #     kanizsa_sst
 #     kanizsa_trn
 #     target
@@ -23,8 +23,8 @@ strPathParent01="${pacman_data_path}${pacman_sub_id}/nii/feat_level_2_comb/"
 # Input (feat directories):
 lstIn=(feat_level_2_bright_square_sst \
        feat_level_2_bright_square_trn \
-       feat_level_2_dark_square_sst \
-       feat_level_2_dark_square_trn \
+       feat_level_2_kanizsa_rotated_sst \
+       feat_level_2_kanizsa_rotated_trn \
        feat_level_2_kanizsa_sst \
        feat_level_2_kanizsa_trn \
        feat_level_2_target)
@@ -32,8 +32,8 @@ lstIn=(feat_level_2_bright_square_sst \
 # Output (file names):
 lstOt=(bright_square_sst \
        bright_square_trn \
-       dark_square_sst \
-       dark_square_trn \
+       kanizsa_rotated_sst \
+       kanizsa_rotated_trn \
        kanizsa_sst \
        kanizsa_trn \
        target)
