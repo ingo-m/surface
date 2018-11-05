@@ -115,7 +115,7 @@ varZfill = 3
 
 # Path to npy file with pRF time course models (to save or to load). Without
 # file extension.
-strPathMdl = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/pRF_time_course_models_03_runs/pRF_model_tc'
+strPathMdl = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_01_pRF_time_course_models_03_runs/pRF_model_tc'
 
 # In case of a multi-run experiment, data may not fit into memory. In that
 # case, you can switch to hdf5 mode, with reduced memory impact. Data are
