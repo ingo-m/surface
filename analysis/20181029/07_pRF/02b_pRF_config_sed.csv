@@ -101,7 +101,7 @@ lgcCrteMdl = False
 # `~/pyprf/stimulus_presentation/code/stimulus.py` with 'Logging mode' set to
 # 'True'. (Number & order of entries in `lstPathNiiFunc` and `lstPathPng` has
 # to match). Note: Do not insert a line break (i.e. all runs on one line).
-lstPathPng = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/pRF_stimuli/Run_01_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/pRF_stimuli/Run_02_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/pRF_stimuli/Run_03_frames/frame_']
+lstPathPng = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_01_pRF_stimuli/Run_01_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_01_pRF_stimuli/Run_02_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_01_pRF_stimuli/Run_03_frames/frame_']
 
 # Start index of PNG files. For instance, `varStrtIdx = 0` if the name of
 # the first PNG file is `file_000.png`, or `varStrtIdx = 1` if it is
