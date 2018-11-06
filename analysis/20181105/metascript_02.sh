@@ -194,7 +194,6 @@ date
 #-------------------------------------------------------------------------------
 # ### Intermediate steps
 
-
 echo "---Automatic: Calculate tSNR maps."
 source ${strPathPrnt}03_intermediate_steps/n_01_sh_tSNR.sh
 date
