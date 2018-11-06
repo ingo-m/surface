@@ -115,6 +115,9 @@ varSupSmp = 5.0
 tplLimCntrX = (-2.25, 2.25)
 tplLimCntrY = (-2.25, 2.25)
 
+# Limits of central square ROI for Kanizsa rotated condition (L1 norm):
+varLimL1 = np.sqrt((np.power(2.25, 2.0) + np.power(2.25, 2.0)))
+
 # Radius of central region to avoid (fixation dot):
 varFix = 0.25
 
@@ -374,6 +377,13 @@ aryLgcCntr = np.logical_and(
 # Avoid fixation dot:
 aryLgcCntr[aryDist < varFix] = 0.0
 
+# Mask for central square - rotated by 45 degree:
+aryDistL1 = np.add(np.abs(arySpaceXcrt), np.abs(arySpaceYcrt))
+aryLgcCntr45 = np.less(aryDistL1, varLimL1)
+
+# Avoid fixation dot:
+aryLgcCntr45[aryDist < varFix] = 0.0
+
 # Mask for edge - restrict outer regions:
 aryLgcEdg01 = np.logical_and(
                              np.greater(arySpaceXcrt,
@@ -447,6 +457,9 @@ for idxRoi in range(3):  #noqa
     elif idxRoi == 2:
         # Periphery (left and right ends of screen)
         aryLgcStim = aryLgcBck
+    if idxRoi == 3:
+        # Central square, rotated by 45 deg (for Kanizsa rotated condition)
+        aryLgcStim = aryLgcCntr45
 
     # *************************************************************************
     # *** Calculation of stimulus-pRF overlap
@@ -656,6 +669,9 @@ for idxRoi in range(3):  #noqa
     elif idxRoi == 2:
         # Periphery (left and right ends of screen)
         strHmf = 'background'
+    if idxRoi == 3:
+        # Central square, rotated by 45 deg (for Kanizsa rotated condition)
+        strHmf = 'centre_rot'
 
     # Save nii to disk:
     nib.save(niiOtRatio, (strNiiOt + 'ovrlp_ratio_' + strHmf + '.nii.gz'))
