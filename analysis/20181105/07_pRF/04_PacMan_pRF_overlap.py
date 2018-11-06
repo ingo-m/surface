@@ -446,7 +446,7 @@ vecNiiShp = aryNiiX.shape
 # *****************************************************************************
 # *** Loop through ROIs (central square, edge, periphery)
 
-for idxRoi in range(3):  #noqa
+for idxRoi in range(4):  #noqa
 
     if idxRoi == 0:
         # Central square
@@ -457,7 +457,7 @@ for idxRoi in range(3):  #noqa
     elif idxRoi == 2:
         # Periphery (left and right ends of screen)
         aryLgcStim = aryLgcBck
-    if idxRoi == 3:
+    elif idxRoi == 3:
         # Central square, rotated by 45 deg (for Kanizsa rotated condition)
         aryLgcStim = aryLgcCntr45
 
@@ -669,9 +669,9 @@ for idxRoi in range(3):  #noqa
     elif idxRoi == 2:
         # Periphery (left and right ends of screen)
         strHmf = 'background'
-    if idxRoi == 3:
+    elif idxRoi == 3:
         # Central square, rotated by 45 deg (for Kanizsa rotated condition)
-        strHmf = 'centre_rot'
+        strHmf = 'diamond'
 
     # Save nii to disk:
     nib.save(niiOtRatio, (strNiiOt + 'ovrlp_ratio_' + strHmf + '.nii.gz'))
