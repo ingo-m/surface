@@ -33,9 +33,7 @@ strPthCbs="${pacman_anly_path}${pacman_sub_id}/08_depthsampling/"
 aryCbs=(cbs_lh_glm_prf.LayoutXML \
         cbs_rh_glm_prf.LayoutXML \
         cbs_lh_ert.LayoutXML \
-        cbs_rh_ert.LayoutXML \
-        cbs_lh_ert_long.LayoutXML \
-        cbs_rh_ert_long.LayoutXML)
+        cbs_rh_ert.LayoutXML)
 
 # Names of python scripts to run:
 aryPy=(renameJistOutput.py \
