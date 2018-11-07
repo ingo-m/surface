@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+pRF_results_file_list_version_01.txt
+
+pRF overlap with ROIs: background, centre, edge;
+for experimental conditions: Kanizsa, dark square, bright square.
+
+Subject 20181029.
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+pRF_results_file_list_version_02.txt
+
+pRF overlap with ROIs: background, centre, diamond (centre rotated), edge;
+for experimental conditions: Kanizsa, Kanizsa rotated, bright square.
+
+Subject 20181105 and following.
+-------------------------------------------------------------------------------
