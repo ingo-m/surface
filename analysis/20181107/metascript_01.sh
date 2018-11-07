@@ -13,7 +13,7 @@
 pacman_sub_id="20181107"
 
 # BIDS subject ID:
-pacman_sub_id_bids="sub-02"
+pacman_sub_id_bids="sub-03"
 
 # Analysis parent directory (containing scripts):
 pacman_anly_path="/home/john/PhD/GitLab/surface/analysis/"
