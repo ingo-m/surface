@@ -25,7 +25,7 @@
 # ### Define paths
 
 # Subject ID:
-pacman_sub_id="20181029"
+pacman_sub_id="20181105"
 
 # Analysis parent directory (containing scripts):
 pacman_anly_path="/home/john/PhD/GitLab/surface/analysis/"
