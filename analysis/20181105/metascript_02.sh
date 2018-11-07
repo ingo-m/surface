@@ -44,6 +44,19 @@ else
 	fi
 fi
 
+if ${pacman_wait};
+then
+	echo "---Manual:"
+	echo "   Adjust file names in"
+							echo "   ${strPathPrnt}02_feat/n_01_rename.sh"
+	echo "   Type 'go' to continue"
+	read -r -s -d $'g'
+	read -r -s -d $'o'
+	date
+else
+	:
+fi
+
 if ${pacman_from_bids};
 then
 	:
@@ -163,19 +176,6 @@ date
 
 #-------------------------------------------------------------------------------
 # ### First level FEAT
-
-if ${pacman_wait};
-then
-	echo "---Manual:"
-	echo "   Adjust file names in"
-							echo "   ${strPathPrnt}02_feat/n_01_rename.sh"
-	echo "   Type 'go' to continue"
-	read -r -s -d $'g'
-	read -r -s -d $'o'
-	date
-else
-	:
-fi
 
 echo "---Automatic: Prepare 1st level FEAT - rename runs."
 source ${strPathPrnt}02_feat/n_01_rename.sh
