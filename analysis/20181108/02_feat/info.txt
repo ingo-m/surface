@@ -1,0 +1,7 @@
+level_1_fsf_comb:
+
+Feat analysis with sustained and transient predictors.
+
+level_1_fsf_prf:
+
+Preprocessing (high pass temporal filtering) only.
