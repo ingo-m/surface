@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 0
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181105/nii/feat_level_1_prf/prf_03"
+set fmri(outputdir) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181108/nii/feat_level_1_prf/prf_03"
 
 # TR(s)
 set fmri(tr) 1.947
@@ -267,7 +267,7 @@ set fmri(totalVoxels) 233416040
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181105/nii/func_reg_distcorUnwrp/prf_03"
+set feat_files(1) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181108/nii/func_reg_distcorUnwrp/prf_03"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
