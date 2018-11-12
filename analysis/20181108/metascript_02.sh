@@ -254,6 +254,15 @@ date
 #-------------------------------------------------------------------------------
 # ### pRF analysis
 
+# For subject 20181108 there is an additional dataset from a pilot session with
+# a different stimulus design ('dark square' condition instead of 'Kanizsa
+# rotated'), session ID 20181029. The pilot session included three pRF runs.
+# Here, the three pRF runs from session 20181029 are registered to session
+# 20181108.
+echo "---Automatic: Register extra-session pRF data (from pilot session)."
+source ${strPathPrnt}07_pRF/00_register_extra_session_pRF.sh
+date
+
 echo "---Automatic: Prepare pRF analysis."
 python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
 source ${strPathPrnt}07_pRF/02a_prepare_pRF_config.sh
