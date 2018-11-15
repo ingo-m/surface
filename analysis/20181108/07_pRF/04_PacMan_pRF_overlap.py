@@ -99,12 +99,12 @@ varSupSmp = 5.0
 # varKnzPos = 3.0
 #
 # Limits of central square ROI (avoiding fixation dot):
-# x-limits: -2.25 deg to -0.75 & 0.75 deg to 2.25 deg
-# y-limits: -2.25 deg to -0.75 & 0.75 deg to 2.25 deg
+# x-limits: -2.0 deg to -0.25 & 0.25 deg to 2.0 deg
+# y-limits: -2.0 deg to -0.25 & 0.25 deg to 2.0 deg
 #
 # Limits of border ROI (border is at 3.0 deg):
-# x-limits: -3.25 deg to -2.75 deg & 2.75 deg to 3.25 deg
-# y-limits: -3.25 deg to -2.75 deg & 2.75 deg to 3.25 deg
+# x-limits: -3.5 deg to -2.5 deg & 2.5 deg to 3.5 deg
+# y-limits: -3.5 deg to -2.5 deg & 2.5 deg to 3.5 deg
 #
 # Limits of background ROI (PacMan inducers extend to +/- 4.5 deg):
 # x-limits: -8.3 deg to -5.0 deg & 5.0 deg to 8.3 deg
@@ -112,21 +112,21 @@ varSupSmp = 5.0
 # -----------------------------------------------------------------------------
 
 # Limits of central square ROI:
-tplLimCntrX = (-2.25, 2.25)
-tplLimCntrY = (-2.25, 2.25)
+tplLimCntrX = (-2.0, 2.0)
+tplLimCntrY = (-2.0, 2.0)
 
 # Limits of central square ROI for Kanizsa rotated condition (L1 norm):
-varLimL1 = np.sqrt((np.power(2.25, 2.0) + np.power(2.25, 2.0)))
+varLimL1 = np.sqrt((np.power(2.0, 2.0) + np.power(2.0, 2.0)))
 
 # Radius of central region to avoid (fixation dot):
 varFix = 0.25
 
 # Limits of border ROI (border is at 3.0 deg):
-lstLimEdgX = [(-3.25, -2.75), (2.75, 3.25)]
-lstLimEdgY = [(-3.25, -2.75), (2.75, 3.25)]
+lstLimEdgX = [(-3.5, -2.5), (2.5, 3.5)]
+lstLimEdgY = [(-3.5, -2.5), (2.5, 3.5)]
 
 # Limits of background ROI (PacMan inducers extend to +/- 4.5 deg):
-lstLimBckX = [(-8.3, -5.0),  (5.0, 8.3)]
+lstLimBckX = [(-8.3, -6.0),  (6.0, 8.3)]
 lstLimBckY = [(-5.19, 5.19), (-5.19, 5.19)]
 
 # Overlap is calculated with an R2 value above the following threshold:
