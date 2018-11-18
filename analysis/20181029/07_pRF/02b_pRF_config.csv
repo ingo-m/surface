@@ -78,7 +78,7 @@ varVslSpcSzeY = 200
 # functional runs. The order of functional volumes, and their number, has to
 # correspond to the order and number of PNG files containing the stimulus
 # information. Note: Do not insert a line break.
-lstPathNiiFunc = ['PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', 'PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', 'PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/feat_level_1_prf/prf_03.feat/filtered_func_data.nii.gz']
+lstPathNiiFunc = ['PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', 'PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/feat_level_1_prf/prf_02.feat/filtered_func_data.nii.gz', 'PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/feat_level_1_prf/prf_03.feat/filtered_func_data.nii.gz']
 
 # Path of mask (to restrict pRF model finding):
 strPathNiiMask = 'PLACEHOLDER_FOR_DATA_PATHPLACEHOLDER_FOR_SUBJECT_ID/nii/retinotopy/mask/brainmask.nii.gz'
