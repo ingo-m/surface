@@ -57,7 +57,7 @@ varSdSmthTmp = 2.5
 
 # Extent of spatial smoothing for fMRI data [standard deviation of the Gaussian
 # kernel, in mm]
-varSdSmthSpt = 1.0
+varSdSmthSpt = 1.6
 
 # Perform linear trend removal on fMRI data?
 lgcLinTrnd = True
@@ -78,7 +78,7 @@ varVslSpcSzeY = 200
 # functional runs. The order of functional volumes, and their number, has to
 # correspond to the order and number of PNG files containing the stimulus
 # information. Note: Do not insert a line break.
-lstPathNiiFunc = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/feat_level_1_prf/prf_03.feat/filtered_func_data.nii.gz']
+lstPathNiiFunc = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/feat_level_1_prf/prf_02.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/feat_level_1_prf/prf_03.feat/filtered_func_data.nii.gz']
 
 # Path of mask (to restrict pRF model finding):
 strPathNiiMask = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181029/nii/retinotopy/mask/brainmask.nii.gz'
