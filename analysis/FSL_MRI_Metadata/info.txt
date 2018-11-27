@@ -9,3 +9,8 @@ Version 02:
 - TR = 2.079
 - Resolution = 0.8 mm iso
 - Conditions: Kanizsa, Kanizsa rotated, bright square
+
+Version 03:
+- TR = 2.079
+- Resolution = 0.8 mm iso
+- Conditions: Pac-Man static, bright square

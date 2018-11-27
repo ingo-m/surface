@@ -95,7 +95,7 @@ for index_9 = 1:numel(ary_prefix)
     while abs(var_cor) > var_cor_threshold
         %% Define parameters II:
         % Duration of one volume TR in seconds
-        var_TR = 1.947;
+        var_TR = 2.079;
         % Duration of stimulus blocks in seconds:
         var_dur_blk_stim = (6.0 * var_TR);
         % We define a vector that contains the possible durations for the
@@ -153,7 +153,7 @@ for index_9 = 1:numel(ary_prefix)
         % succession). If this number is set to one, this randomisation
         % procedure is ignored; in this way this script can be used for
         % simple block designs with just one level.
-        var_stim_levels = 3;
+        var_stim_levels = 2;
         %% Create design matrix & preparations for jitter:
         % Number of time points in the design matrix. Note: The reason we
         % have to round here is that otherwise MATLAB does not represent
