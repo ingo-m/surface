@@ -205,6 +205,7 @@ fleLog.write('Parent path: ' + strPthPrnt + '\n')
 fleLog.write('Run: ' + str(dicExpInfo['Run']) + '\n')
 
 # Log condition:
+fleLog.write('Texture: ' + dicExpInfo['Texture'] + '\n')
 fleLog.write('Test mode: ' + dicExpInfo['Test mode'] + '\n')
 fleLog.write('Subject_ID: ' + dicExpInfo['Subject_ID'] + '\n')
 
