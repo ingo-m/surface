@@ -43,8 +43,18 @@ varPixX = 1920  # [1920.0] for 7T scanner
 # Height of monitor [pixels]:
 varPixY = 1200  # [1200.0] for 7T scanner
 
+# We match the area covered by the square and by the Pac-Man.
+#
+# area_pacman = np.pi * ((7.5 * 0.5) ** 2.0)
+#             = 44.18
+#
+# sidelength_square = np.sqrt(44.18)
+#                   = 6.65
+#
 # Position (x & y displacement from origin) of square [degree of visual angle]:
-varSqrPos = 3.0
+# varSqrPos = 6.65 * 0.5
+#           = 3.325
+varSqrPos = 3.325
 
 # Luminance of bright stimuli is 246 [cd / m^2], corresponding to a psychopy
 # pixel intensity of -0.26.
@@ -68,7 +78,7 @@ lstPacClr = [0.0, 0.0, 0.0]
 # order for the event to be logged as a hit:
 varHitTme = 2.0
 
-# Size of Pac-Man [degree of visual angle]:
+# Diameter of Pac-Man [degree of visual angle]:
 varPacSze = 7.5
 # -----------------------------------------------------------------------------
 
@@ -101,7 +111,7 @@ objGui = gui.DlgFromDict(dictionary=dicExpInfo,
 # On some systems (windows) the return values from the GUI are not as expected.
 # Set their types explicitly:
 dicExpInfo['Run'] = str(dicExpInfo['Run'])
-dicExpInfo['Texture'] = str(dicExpInfo['Test mode'])
+dicExpInfo['Texture'] = str(dicExpInfo['Texture'])
 dicExpInfo['Test mode'] = str(dicExpInfo['Test mode'])
 dicExpInfo['Subject_ID'] = str(dicExpInfo['Subject_ID'])
 
@@ -572,6 +582,10 @@ def func_exit():
 
 # -----------------------------------------------------------------------------
 # *** Presentation
+
+# Draw random noise texture background:
+if lgcTxtr:
+    objBckgrd.draw(win=objWin)
 
 # Draw fixation dot:
 objFixSrd.draw(win=objWin)
