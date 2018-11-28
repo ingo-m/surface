@@ -12,12 +12,14 @@ NEW_DATA_PATH="${pacman_data_path}${pacman_sub_id}/"
 NEW_ANALYSIS_PATH="${pacman_anly_path}"
 
 # fsf files:
-aryFsfFiles=(feat_level_2_bright_square_sst \
-             feat_level_2_bright_square_trn \
-             feat_level_2_kanizsa_rotated_sst \
-             feat_level_2_kanizsa_rotated_trn \
-             feat_level_2_kanizsa_sst \
-             feat_level_2_kanizsa_trn \
+aryFsfFiles=(feat_level_2_bright_square_txtr_sst \
+             feat_level_2_bright_square_txtr_trn \
+             feat_level_2_bright_square_uni_sst \
+             feat_level_2_bright_square_uni_trn \
+             feat_level_2_pacman_static_txtr_sst \
+             feat_level_2_pacman_static_txtr_trn \
+             feat_level_2_pacman_static_uni_sst \
+             feat_level_2_pacman_static_uni_trn \
              feat_level_2_target)
 
 for index01 in ${aryFsfFiles[@]}

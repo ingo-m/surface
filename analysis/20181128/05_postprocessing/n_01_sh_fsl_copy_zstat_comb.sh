@@ -12,30 +12,36 @@
 strPathParent01="${pacman_data_path}${pacman_sub_id}/nii/feat_level_2_comb/"
 
 # Order of conditions (sst = sustained, trn = transient):
-#     bright_square_sst
-#     bright_square_trn
-#     kanizsa_rotated_sst
-#     kanizsa_rotated_trn
-#     kanizsa_sst
-#     kanizsa_trn
-#     target
+# bright_square_txtr_sst
+# bright_square_txtr_trn
+# bright_square_uni_sst
+# bright_square_uni_trn
+# pacman_static_txtr_sst
+# pacman_static_txtr_trn
+# pacman_static_uni_sst
+# pacman_static_uni_trn
+# target
 
 # Input (feat directories):
-lstIn=(feat_level_2_bright_square_sst \
-       feat_level_2_bright_square_trn \
-       feat_level_2_kanizsa_rotated_sst \
-       feat_level_2_kanizsa_rotated_trn \
-       feat_level_2_kanizsa_sst \
-       feat_level_2_kanizsa_trn \
+lstIn=(feat_level_2_bright_square_txtr_sst \
+       feat_level_2_bright_square_txtr_trn \
+       feat_level_2_bright_square_uni_sst \
+       feat_level_2_bright_square_uni_trn \
+       feat_level_2_pacman_static_txtr_sst \
+       feat_level_2_pacman_static_txtr_trn \
+       feat_level_2_pacman_static_uni_sst \
+       feat_level_2_pacman_static_uni_trn \
        feat_level_2_target)
 
 # Output (file names):
-lstOt=(bright_square_sst \
-       bright_square_trn \
-       kanizsa_rotated_sst \
-       kanizsa_rotated_trn \
-       kanizsa_sst \
-       kanizsa_trn \
+lstOt=(bright_square_txtr_sst \
+       bright_square_txtr_trn \
+       bright_square_uni_sst \
+       bright_square_uni_trn \
+       pacman_static_txtr_sst \
+       pacman_static_txtr_trn \
+       pacman_static_uni_sst \
+       pacman_static_uni_trn \
        target)
 
 strPathParent02=".gfeat/cope1.feat/stats/zstat1.nii.gz"
