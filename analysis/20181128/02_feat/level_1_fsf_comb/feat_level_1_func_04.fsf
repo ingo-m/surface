@@ -147,13 +147,13 @@ set fmri(robust_yn) 0
 set fmri(mixed_yn) 2
 
 # Number of EVs
-set fmri(evs_orig) 7
-set fmri(evs_real) 7
+set fmri(evs_orig) 5
+set fmri(evs_real) 5
 set fmri(evs_vox) 0
 
 # Number of contrasts
-set fmri(ncon_orig) 7
-set fmri(ncon_real) 7
+set fmri(ncon_orig) 5
+set fmri(ncon_real) 5
 
 # Number of F-tests
 set fmri(nftests_orig) 0
@@ -304,7 +304,7 @@ set fmri(tempfilt_yn1) 1
 set fmri(deriv_yn1) 0
 
 # Custom EV file (EV 1)
-set fmri(custom1) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02/EV_func_04_Bright_square.txt"
+set fmri(custom1) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_03/EV_func_04_Bright_square.txt"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
@@ -323,12 +323,6 @@ set fmri(ortho1.4) 0
 
 # Orthogonalise EV 1 wrt EV 5
 set fmri(ortho1.5) 0
-
-# Orthogonalise EV 1 wrt EV 6
-set fmri(ortho1.6) 0
-
-# Orthogonalise EV 1 wrt EV 7
-set fmri(ortho1.7) 0
 
 # EV 2 title
 set fmri(evtitle2) "bright_square_trn"
@@ -362,7 +356,7 @@ set fmri(tempfilt_yn2) 1
 set fmri(deriv_yn2) 0
 
 # Custom EV file (EV 2)
-set fmri(custom2) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02_transients/EV_func_04_Bright_square.txt"
+set fmri(custom2) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_03_transients/EV_func_04_Bright_square.txt"
 
 # Orthogonalise EV 2 wrt EV 0
 set fmri(ortho2.0) 0
@@ -382,14 +376,8 @@ set fmri(ortho2.4) 0
 # Orthogonalise EV 2 wrt EV 5
 set fmri(ortho2.5) 0
 
-# Orthogonalise EV 2 wrt EV 6
-set fmri(ortho2.6) 0
-
-# Orthogonalise EV 2 wrt EV 7
-set fmri(ortho2.7) 0
-
 # EV 3 title
-set fmri(evtitle3) "kanizsa_rotated_sst"
+set fmri(evtitle3) "pacman_static_sst"
 
 # Basic waveform shape (EV 3)
 # 0 : Square
@@ -420,7 +408,7 @@ set fmri(tempfilt_yn3) 1
 set fmri(deriv_yn3) 0
 
 # Custom EV file (EV 3)
-set fmri(custom3) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02/EV_func_04_Kanizsa_rotated.txt"
+set fmri(custom3) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_03/EV_func_04_PacMan_static.txt"
 
 # Orthogonalise EV 3 wrt EV 0
 set fmri(ortho3.0) 0
@@ -440,14 +428,8 @@ set fmri(ortho3.4) 0
 # Orthogonalise EV 3 wrt EV 5
 set fmri(ortho3.5) 0
 
-# Orthogonalise EV 3 wrt EV 6
-set fmri(ortho3.6) 0
-
-# Orthogonalise EV 3 wrt EV 7
-set fmri(ortho3.7) 0
-
 # EV 4 title
-set fmri(evtitle4) "kanizsa_rotated_trn"
+set fmri(evtitle4) "pacman_static_trn"
 
 # Basic waveform shape (EV 4)
 # 0 : Square
@@ -478,7 +460,7 @@ set fmri(tempfilt_yn4) 1
 set fmri(deriv_yn4) 0
 
 # Custom EV file (EV 4)
-set fmri(custom4) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02_transients/EV_func_04_Kanizsa_rotated.txt"
+set fmri(custom4) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_03_transients/EV_func_04_PacMan_static.txt"
 
 # Orthogonalise EV 4 wrt EV 0
 set fmri(ortho4.0) 0
@@ -498,14 +480,8 @@ set fmri(ortho4.4) 0
 # Orthogonalise EV 4 wrt EV 5
 set fmri(ortho4.5) 0
 
-# Orthogonalise EV 4 wrt EV 6
-set fmri(ortho4.6) 0
-
-# Orthogonalise EV 4 wrt EV 7
-set fmri(ortho4.7) 0
-
 # EV 5 title
-set fmri(evtitle5) "kanizsa_sst"
+set fmri(evtitle5) "target"
 
 # Basic waveform shape (EV 5)
 # 0 : Square
@@ -536,7 +512,7 @@ set fmri(tempfilt_yn5) 1
 set fmri(deriv_yn5) 0
 
 # Custom EV file (EV 5)
-set fmri(custom5) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02/EV_func_04_Kanizsa.txt"
+set fmri(custom5) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_03/EV_func_04_Target.txt"
 
 # Orthogonalise EV 5 wrt EV 0
 set fmri(ortho5.0) 0
@@ -555,128 +531,6 @@ set fmri(ortho5.4) 0
 
 # Orthogonalise EV 5 wrt EV 5
 set fmri(ortho5.5) 0
-
-# Orthogonalise EV 5 wrt EV 6
-set fmri(ortho5.6) 0
-
-# Orthogonalise EV 5 wrt EV 7
-set fmri(ortho5.7) 0
-
-# EV 6 title
-set fmri(evtitle6) "kanizsa_trn"
-
-# Basic waveform shape (EV 6)
-# 0 : Square
-# 1 : Sinusoid
-# 2 : Custom (1 entry per volume)
-# 3 : Custom (3 column format)
-# 4 : Interaction
-# 10 : Empty (all zeros)
-set fmri(shape6) 3
-
-# Convolution (EV 6)
-# 0 : None
-# 1 : Gaussian
-# 2 : Gamma
-# 3 : Double-Gamma HRF
-# 4 : Gamma basis functions
-# 5 : Sine basis functions
-# 6 : FIR basis functions
-set fmri(convolve6) 3
-
-# Convolve phase (EV 6)
-set fmri(convolve_phase6) 0
-
-# Apply temporal filtering (EV 6)
-set fmri(tempfilt_yn6) 1
-
-# Add temporal derivative (EV 6)
-set fmri(deriv_yn6) 0
-
-# Custom EV file (EV 6)
-set fmri(custom6) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02_transients/EV_func_04_Kanizsa.txt"
-
-# Orthogonalise EV 6 wrt EV 0
-set fmri(ortho6.0) 0
-
-# Orthogonalise EV 6 wrt EV 1
-set fmri(ortho6.1) 0
-
-# Orthogonalise EV 6 wrt EV 2
-set fmri(ortho6.2) 0
-
-# Orthogonalise EV 6 wrt EV 3
-set fmri(ortho6.3) 0
-
-# Orthogonalise EV 6 wrt EV 4
-set fmri(ortho6.4) 0
-
-# Orthogonalise EV 6 wrt EV 5
-set fmri(ortho6.5) 0
-
-# Orthogonalise EV 6 wrt EV 6
-set fmri(ortho6.6) 0
-
-# Orthogonalise EV 6 wrt EV 7
-set fmri(ortho6.7) 0
-
-# EV 7 title
-set fmri(evtitle7) "target"
-
-# Basic waveform shape (EV 7)
-# 0 : Square
-# 1 : Sinusoid
-# 2 : Custom (1 entry per volume)
-# 3 : Custom (3 column format)
-# 4 : Interaction
-# 10 : Empty (all zeros)
-set fmri(shape7) 3
-
-# Convolution (EV 7)
-# 0 : None
-# 1 : Gaussian
-# 2 : Gamma
-# 3 : Double-Gamma HRF
-# 4 : Gamma basis functions
-# 5 : Sine basis functions
-# 6 : FIR basis functions
-set fmri(convolve7) 3
-
-# Convolve phase (EV 7)
-set fmri(convolve_phase7) 0
-
-# Apply temporal filtering (EV 7)
-set fmri(tempfilt_yn7) 1
-
-# Add temporal derivative (EV 7)
-set fmri(deriv_yn7) 0
-
-# Custom EV file (EV 7)
-set fmri(custom7) "PLACEHOLDER_FOR_ANALYSIS_PATHFSL_MRI_Metadata/version_02/EV_func_04_Target.txt"
-
-# Orthogonalise EV 7 wrt EV 0
-set fmri(ortho7.0) 0
-
-# Orthogonalise EV 7 wrt EV 1
-set fmri(ortho7.1) 0
-
-# Orthogonalise EV 7 wrt EV 2
-set fmri(ortho7.2) 0
-
-# Orthogonalise EV 7 wrt EV 3
-set fmri(ortho7.3) 0
-
-# Orthogonalise EV 7 wrt EV 4
-set fmri(ortho7.4) 0
-
-# Orthogonalise EV 7 wrt EV 5
-set fmri(ortho7.5) 0
-
-# Orthogonalise EV 7 wrt EV 6
-set fmri(ortho7.6) 0
-
-# Orthogonalise EV 7 wrt EV 7
-set fmri(ortho7.7) 0
 
 # Contrast & F-tests mode
 # real : control real EVs
@@ -705,12 +559,6 @@ set fmri(con_real1.4) 0
 # Real contrast_real vector 1 element 5
 set fmri(con_real1.5) 0
 
-# Real contrast_real vector 1 element 6
-set fmri(con_real1.6) 0
-
-# Real contrast_real vector 1 element 7
-set fmri(con_real1.7) 0
-
 # Display images for contrast_real 2
 set fmri(conpic_real.2) 0
 
@@ -732,17 +580,11 @@ set fmri(con_real2.4) 0
 # Real contrast_real vector 2 element 5
 set fmri(con_real2.5) 0
 
-# Real contrast_real vector 2 element 6
-set fmri(con_real2.6) 0
-
-# Real contrast_real vector 2 element 7
-set fmri(con_real2.7) 0
-
 # Display images for contrast_real 3
 set fmri(conpic_real.3) 0
 
 # Title for contrast_real 3
-set fmri(conname_real.3) "kanizsa_rotated_sst"
+set fmri(conname_real.3) "pacman_static_sst"
 
 # Real contrast_real vector 3 element 1
 set fmri(con_real3.1) 0
@@ -759,17 +601,11 @@ set fmri(con_real3.4) 0
 # Real contrast_real vector 3 element 5
 set fmri(con_real3.5) 0
 
-# Real contrast_real vector 3 element 6
-set fmri(con_real3.6) 0
-
-# Real contrast_real vector 3 element 7
-set fmri(con_real3.7) 0
-
 # Display images for contrast_real 4
 set fmri(conpic_real.4) 0
 
 # Title for contrast_real 4
-set fmri(conname_real.4) "kanizsa_rotated_trn"
+set fmri(conname_real.4) "pacman_static_trn"
 
 # Real contrast_real vector 4 element 1
 set fmri(con_real4.1) 0
@@ -786,17 +622,11 @@ set fmri(con_real4.4) 1.0
 # Real contrast_real vector 4 element 5
 set fmri(con_real4.5) 0
 
-# Real contrast_real vector 4 element 6
-set fmri(con_real4.6) 0
-
-# Real contrast_real vector 4 element 7
-set fmri(con_real4.7) 0
-
 # Display images for contrast_real 5
 set fmri(conpic_real.5) 0
 
 # Title for contrast_real 5
-set fmri(conname_real.5) "kanizsa_sst"
+set fmri(conname_real.5) "target"
 
 # Real contrast_real vector 5 element 1
 set fmri(con_real5.1) 0
@@ -812,66 +642,6 @@ set fmri(con_real5.4) 0
 
 # Real contrast_real vector 5 element 5
 set fmri(con_real5.5) 1.0
-
-# Real contrast_real vector 5 element 6
-set fmri(con_real5.6) 0
-
-# Real contrast_real vector 5 element 7
-set fmri(con_real5.7) 0
-
-# Display images for contrast_real 6
-set fmri(conpic_real.6) 0
-
-# Title for contrast_real 6
-set fmri(conname_real.6) "kanizsa_trn"
-
-# Real contrast_real vector 6 element 1
-set fmri(con_real6.1) 0
-
-# Real contrast_real vector 6 element 2
-set fmri(con_real6.2) 0
-
-# Real contrast_real vector 6 element 3
-set fmri(con_real6.3) 0
-
-# Real contrast_real vector 6 element 4
-set fmri(con_real6.4) 0
-
-# Real contrast_real vector 6 element 5
-set fmri(con_real6.5) 0
-
-# Real contrast_real vector 6 element 6
-set fmri(con_real6.6) 1.0
-
-# Real contrast_real vector 6 element 7
-set fmri(con_real6.7) 0
-
-# Display images for contrast_real 7
-set fmri(conpic_real.7) 0
-
-# Title for contrast_real 7
-set fmri(conname_real.7) "target"
-
-# Real contrast_real vector 7 element 1
-set fmri(con_real7.1) 0
-
-# Real contrast_real vector 7 element 2
-set fmri(con_real7.2) 0
-
-# Real contrast_real vector 7 element 3
-set fmri(con_real7.3) 0
-
-# Real contrast_real vector 7 element 4
-set fmri(con_real7.4) 0
-
-# Real contrast_real vector 7 element 5
-set fmri(con_real7.5) 0
-
-# Real contrast_real vector 7 element 6
-set fmri(con_real7.6) 0
-
-# Real contrast_real vector 7 element 7
-set fmri(con_real7.7) 1.0
 
 # Display images for contrast_orig 1
 set fmri(conpic_orig.1) 0
@@ -894,12 +664,6 @@ set fmri(con_orig1.4) 0
 # Real contrast_orig vector 1 element 5
 set fmri(con_orig1.5) 0
 
-# Real contrast_orig vector 1 element 6
-set fmri(con_orig1.6) 0
-
-# Real contrast_orig vector 1 element 7
-set fmri(con_orig1.7) 0
-
 # Display images for contrast_orig 2
 set fmri(conpic_orig.2) 0
 
@@ -921,17 +685,11 @@ set fmri(con_orig2.4) 0
 # Real contrast_orig vector 2 element 5
 set fmri(con_orig2.5) 0
 
-# Real contrast_orig vector 2 element 6
-set fmri(con_orig2.6) 0
-
-# Real contrast_orig vector 2 element 7
-set fmri(con_orig2.7) 0
-
 # Display images for contrast_orig 3
 set fmri(conpic_orig.3) 0
 
 # Title for contrast_orig 3
-set fmri(conname_orig.3) "kanizsa_rotated_sst"
+set fmri(conname_orig.3) "pacman_static_sst"
 
 # Real contrast_orig vector 3 element 1
 set fmri(con_orig3.1) 0
@@ -948,17 +706,11 @@ set fmri(con_orig3.4) 0
 # Real contrast_orig vector 3 element 5
 set fmri(con_orig3.5) 0
 
-# Real contrast_orig vector 3 element 6
-set fmri(con_orig3.6) 0
-
-# Real contrast_orig vector 3 element 7
-set fmri(con_orig3.7) 0
-
 # Display images for contrast_orig 4
 set fmri(conpic_orig.4) 0
 
 # Title for contrast_orig 4
-set fmri(conname_orig.4) "kanizsa_rotated_trn"
+set fmri(conname_orig.4) "pacman_static_trn"
 
 # Real contrast_orig vector 4 element 1
 set fmri(con_orig4.1) 0
@@ -975,17 +727,11 @@ set fmri(con_orig4.4) 1.0
 # Real contrast_orig vector 4 element 5
 set fmri(con_orig4.5) 0
 
-# Real contrast_orig vector 4 element 6
-set fmri(con_orig4.6) 0
-
-# Real contrast_orig vector 4 element 7
-set fmri(con_orig4.7) 0
-
 # Display images for contrast_orig 5
 set fmri(conpic_orig.5) 0
 
 # Title for contrast_orig 5
-set fmri(conname_orig.5) "kanizsa_sst"
+set fmri(conname_orig.5) "target"
 
 # Real contrast_orig vector 5 element 1
 set fmri(con_orig5.1) 0
@@ -1002,66 +748,6 @@ set fmri(con_orig5.4) 0
 # Real contrast_orig vector 5 element 5
 set fmri(con_orig5.5) 1.0
 
-# Real contrast_orig vector 5 element 6
-set fmri(con_orig5.6) 0
-
-# Real contrast_orig vector 5 element 7
-set fmri(con_orig5.7) 0
-
-# Display images for contrast_orig 6
-set fmri(conpic_orig.6) 0
-
-# Title for contrast_orig 6
-set fmri(conname_orig.6) "kanizsa_trn"
-
-# Real contrast_orig vector 6 element 1
-set fmri(con_orig6.1) 0
-
-# Real contrast_orig vector 6 element 2
-set fmri(con_orig6.2) 0
-
-# Real contrast_orig vector 6 element 3
-set fmri(con_orig6.3) 0
-
-# Real contrast_orig vector 6 element 4
-set fmri(con_orig6.4) 0
-
-# Real contrast_orig vector 6 element 5
-set fmri(con_orig6.5) 0
-
-# Real contrast_orig vector 6 element 6
-set fmri(con_orig6.6) 1.0
-
-# Real contrast_orig vector 6 element 7
-set fmri(con_orig6.7) 0
-
-# Display images for contrast_orig 7
-set fmri(conpic_orig.7) 0
-
-# Title for contrast_orig 7
-set fmri(conname_orig.7) "target"
-
-# Real contrast_orig vector 7 element 1
-set fmri(con_orig7.1) 0
-
-# Real contrast_orig vector 7 element 2
-set fmri(con_orig7.2) 0
-
-# Real contrast_orig vector 7 element 3
-set fmri(con_orig7.3) 0
-
-# Real contrast_orig vector 7 element 4
-set fmri(con_orig7.4) 0
-
-# Real contrast_orig vector 7 element 5
-set fmri(con_orig7.5) 0
-
-# Real contrast_orig vector 7 element 6
-set fmri(con_orig7.6) 0
-
-# Real contrast_orig vector 7 element 7
-set fmri(con_orig7.7) 1.0
-
 # Contrast masking - use >0 instead of thresholding?
 set fmri(conmask_zerothresh_yn) 0
 
@@ -1077,12 +763,6 @@ set fmri(conmask1_4) 0
 # Mask real contrast/F-test 1 with real contrast/F-test 5?
 set fmri(conmask1_5) 0
 
-# Mask real contrast/F-test 1 with real contrast/F-test 6?
-set fmri(conmask1_6) 0
-
-# Mask real contrast/F-test 1 with real contrast/F-test 7?
-set fmri(conmask1_7) 0
-
 # Mask real contrast/F-test 2 with real contrast/F-test 1?
 set fmri(conmask2_1) 0
 
@@ -1094,12 +774,6 @@ set fmri(conmask2_4) 0
 
 # Mask real contrast/F-test 2 with real contrast/F-test 5?
 set fmri(conmask2_5) 0
-
-# Mask real contrast/F-test 2 with real contrast/F-test 6?
-set fmri(conmask2_6) 0
-
-# Mask real contrast/F-test 2 with real contrast/F-test 7?
-set fmri(conmask2_7) 0
 
 # Mask real contrast/F-test 3 with real contrast/F-test 1?
 set fmri(conmask3_1) 0
@@ -1113,12 +787,6 @@ set fmri(conmask3_4) 0
 # Mask real contrast/F-test 3 with real contrast/F-test 5?
 set fmri(conmask3_5) 0
 
-# Mask real contrast/F-test 3 with real contrast/F-test 6?
-set fmri(conmask3_6) 0
-
-# Mask real contrast/F-test 3 with real contrast/F-test 7?
-set fmri(conmask3_7) 0
-
 # Mask real contrast/F-test 4 with real contrast/F-test 1?
 set fmri(conmask4_1) 0
 
@@ -1131,12 +799,6 @@ set fmri(conmask4_3) 0
 # Mask real contrast/F-test 4 with real contrast/F-test 5?
 set fmri(conmask4_5) 0
 
-# Mask real contrast/F-test 4 with real contrast/F-test 6?
-set fmri(conmask4_6) 0
-
-# Mask real contrast/F-test 4 with real contrast/F-test 7?
-set fmri(conmask4_7) 0
-
 # Mask real contrast/F-test 5 with real contrast/F-test 1?
 set fmri(conmask5_1) 0
 
@@ -1148,48 +810,6 @@ set fmri(conmask5_3) 0
 
 # Mask real contrast/F-test 5 with real contrast/F-test 4?
 set fmri(conmask5_4) 0
-
-# Mask real contrast/F-test 5 with real contrast/F-test 6?
-set fmri(conmask5_6) 0
-
-# Mask real contrast/F-test 5 with real contrast/F-test 7?
-set fmri(conmask5_7) 0
-
-# Mask real contrast/F-test 6 with real contrast/F-test 1?
-set fmri(conmask6_1) 0
-
-# Mask real contrast/F-test 6 with real contrast/F-test 2?
-set fmri(conmask6_2) 0
-
-# Mask real contrast/F-test 6 with real contrast/F-test 3?
-set fmri(conmask6_3) 0
-
-# Mask real contrast/F-test 6 with real contrast/F-test 4?
-set fmri(conmask6_4) 0
-
-# Mask real contrast/F-test 6 with real contrast/F-test 5?
-set fmri(conmask6_5) 0
-
-# Mask real contrast/F-test 6 with real contrast/F-test 7?
-set fmri(conmask6_7) 0
-
-# Mask real contrast/F-test 7 with real contrast/F-test 1?
-set fmri(conmask7_1) 0
-
-# Mask real contrast/F-test 7 with real contrast/F-test 2?
-set fmri(conmask7_2) 0
-
-# Mask real contrast/F-test 7 with real contrast/F-test 3?
-set fmri(conmask7_3) 0
-
-# Mask real contrast/F-test 7 with real contrast/F-test 4?
-set fmri(conmask7_4) 0
-
-# Mask real contrast/F-test 7 with real contrast/F-test 5?
-set fmri(conmask7_5) 0
-
-# Mask real contrast/F-test 7 with real contrast/F-test 6?
-set fmri(conmask7_6) 0
 
 # Do contrast masking at all?
 set fmri(conmask1_1) 0

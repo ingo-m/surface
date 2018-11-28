@@ -7,12 +7,12 @@
 # resulting feat files are identical to the original one, with the exception   #
 # of the string refering to the run ID (i.e. "func_01", "func_02", etc.).      #
 # Required inputs:                                                             #
-#	- parent path                                                                #
-#	- array containing the name of the original fsf file (first entry) and       #
-#	  of all the fsf files to be created (arySessionIDs01)                       #
-#	- array with the strings to be used as run IDs in the files to be            #
-#	  created (and the respective string that will be replaced as the            #
-#	  first entry)                                                               #
+#	- parent path                                                          #
+#	- array containing the name of the original fsf file (first entry) and #
+#	  of all the fsf files to be created (arySessionIDs01)                 #
+#	- array with the strings to be used as run IDs in the files to be      #
+#	  created (and the respective string that will be replaced as the      #
+#	  first entry)                                                         #
 ################################################################################
 
 
@@ -20,7 +20,7 @@
 # Define session IDs & paths:
 
 # Parent path:
-strPathParent="/home/john/PhD/GitLab/surface/analysis/20181029/02_feat/level_1_fsf_comb/"
+strPathParent="/home/john/PhD/GitLab/surface/analysis/20181128/02_feat/level_1_fsf_comb/"
 
 # Array with the file names of the fsf file (first entry = existing fsf file)
 arySessionIDs01=(feat_level_1_func_01 \
