@@ -215,6 +215,10 @@ echo "---Automatic: Create event related averages."
 python ${strPathPrnt}03_intermediate_steps/n_03c_py_evnt_rltd_avrgs.py
 date
 
+echo "---Automatic: Create event related averages."
+python ${strPathPrnt}03_intermediate_steps/n_03d_py_evnt_rltd_avrgs.py
+date
+
 echo "---Automatic: Prepare depth-sampling of event related averages."
 source ${strPathPrnt}03_intermediate_steps/n_04_sh_prepare_era_depthsampling.sh
 date

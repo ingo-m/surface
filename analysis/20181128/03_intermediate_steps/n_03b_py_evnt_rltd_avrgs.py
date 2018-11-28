@@ -35,24 +35,18 @@ strPathParent = (pacman_data_path
                  + '/nii/feat_level_1_comb/')
 
 # List of 4D nii files (location within parent directory):
-lstIn_01 = ['func_01.feat/filtered_func_data.nii.gz',
-            'func_02.feat/filtered_func_data.nii.gz',
-            'func_03.feat/filtered_func_data.nii.gz',
+lstIn_01 = ['func_02.feat/filtered_func_data.nii.gz',
             'func_04.feat/filtered_func_data.nii.gz',
-            'func_05.feat/filtered_func_data.nii.gz',
             'func_06.feat/filtered_func_data.nii.gz']
 
 # Directory containing design matrices (EV files):
-strPathEV = (pacman_anly_path + 'FSL_MRI_Metadata/version_02/')
+strPathEV = (pacman_anly_path + 'FSL_MRI_Metadata/version_03/')
 
 # List of design matrices (EV files), in the same order as input 4D nii files
 # (location within parent directory):
-lstIn_02 = ['EV_func_01_Kanizsa_rotated.txt',
-            'EV_func_02_Kanizsa_rotated.txt',
-            'EV_func_03_Kanizsa_rotated.txt',
-            'EV_func_04_Kanizsa_rotated.txt',
-            'EV_func_05_Kanizsa_rotated.txt',
-            'EV_func_06_Kanizsa_rotated.txt']
+lstIn_02 = ['EV_func_02_Bright_square.txt',
+            'EV_func_04_Bright_square.txt',
+            'EV_func_06_Bright_square.txt']
 
 # Output directory:
 strPathOut = (pacman_data_path
@@ -60,7 +54,7 @@ strPathOut = (pacman_data_path
               + '/nii/func_reg_averages/')
 
 # Output file name:
-strOutFileName = 'ERA_Kanizsa_rotated.nii.gz'
+strOutFileName = 'ERA_Bright_square_uni.nii.gz'
 
 # Volume TR of input nii files:
 varTR = 2.079
