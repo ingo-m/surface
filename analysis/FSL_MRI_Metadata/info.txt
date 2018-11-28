@@ -11,6 +11,7 @@ Version 02:
 - Conditions: Kanizsa, Kanizsa rotated, bright square
 
 Version 03:
+- Pilot experiment - session 20181128
 - TR = 2.079
 - Resolution = 0.8 mm iso
 - Conditions: Pac-Man static, bright square

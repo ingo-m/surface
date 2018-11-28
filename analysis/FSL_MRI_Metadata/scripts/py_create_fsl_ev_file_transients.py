@@ -23,7 +23,7 @@ pacman_anly_path = '/home/john/PhD/GitLab/surface/analysis/'
 
 # Input directory:
 strPathInput = (pacman_anly_path
-                + 'FSL_MRI_Metadata/version_02_transients/')
+                + 'FSL_MRI_Metadata/version_03_transients/')
 
 # Output directory:
 strPathOutput = strPathInput
@@ -36,10 +36,14 @@ strFleNme = 'Run_{}_eventmatrix.txt'
 # TARGET second in this list, etc.
 
 # Event types surface perception experiment:
+# lstEventTypes = ['Rest',
+#                  'Target',
+#                  'Kanizsa',
+#                  'Kanizsa_rotated',
+#                  'Bright_square']
 lstEventTypes = ['Rest',
                  'Target',
-                 'Kanizsa',
-                 'Kanizsa_rotated',
+                 'PacMan_static',
                  'Bright_square']
 
 # List of runs (excluding pRF mapping runs):
