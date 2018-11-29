@@ -8,14 +8,14 @@ set fmri(inmelodic) 0
 # Analysis level
 # 1 : First-level analysis
 # 2 : Higher-level analysis
-set fmri(level) 1
+set fmri(level) 2
 
 # Which stages to run
 # 0 : No first-level analysis (registration and/or group stats only)
 # 7 : Full first-level analysis
 # 1 : Pre-processing
 # 2 : Statistics
-set fmri(analysis) 1
+set fmri(analysis) 2
 
 # Use relative filenames
 set fmri(relative_yn) 0
@@ -30,13 +30,13 @@ set fmri(featwatcher_yn) 0
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_prf/prf_03"
+set fmri(outputdir) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_2_comb/feat_level_2_target"
 
 # TR(s)
-set fmri(tr) 2.079
+set fmri(tr) 3
 
 # Total volumes
-set fmri(npts) 227
+set fmri(npts) 6
 
 # Delete volumes
 set fmri(ndelete) 0
@@ -45,7 +45,7 @@ set fmri(ndelete) 0
 set fmri(tagfirst) 1
 
 # Number of first-level analyses
-set fmri(multiple) 1
+set fmri(multiple) 6
 
 # Higher-level input type
 # 1 : Inputs are lower-level FEAT directories
@@ -53,7 +53,7 @@ set fmri(multiple) 1
 set fmri(inputtype) 2
 
 # Carry out pre-stats processing?
-set fmri(filtering_yn) 1
+set fmri(filtering_yn) 0
 
 # Brain/background threshold, %
 set fmri(brain_thresh) 10
@@ -70,7 +70,7 @@ set fmri(noisear) 0.34
 # Motion correction
 # 0 : None
 # 1 : MCFLIRT
-set fmri(mc) 0
+set fmri(mc) 1
 
 # Spin-history (currently obsolete)
 set fmri(sh_yn) 0
@@ -103,10 +103,10 @@ set fmri(st) 0
 set fmri(st_file) ""
 
 # BET brain extraction
-set fmri(bet_yn) 0
+set fmri(bet_yn) 1
 
 # Spatial smoothing FWHM (mm)
-set fmri(smooth) 0
+set fmri(smooth) 5
 
 # Intensity normalization
 set fmri(norm_yn) 0
@@ -124,7 +124,7 @@ set fmri(templp_yn) 0
 set fmri(melodic_yn) 0
 
 # Carry out main stats?
-set fmri(stats_yn) 0
+set fmri(stats_yn) 1
 
 # Carry out prewhitening?
 set fmri(prewhiten_yn) 1
@@ -144,11 +144,11 @@ set fmri(robust_yn) 0
 # 0 : Mixed Effects: Simple OLS
 # 2 : Mixed Effects: FLAME 1
 # 1 : Mixed Effects: FLAME 1+2
-set fmri(mixed_yn) 2
+set fmri(mixed_yn) 3
 
 # Number of EVs
 set fmri(evs_orig) 1
-set fmri(evs_real) 2
+set fmri(evs_real) 1
 set fmri(evs_vox) 0
 
 # Number of contrasts
@@ -173,7 +173,7 @@ set fmri(threshmask) ""
 # 1 : Uncorrected
 # 2 : Voxel
 # 3 : Cluster
-set fmri(thresh) 3
+set fmri(thresh) 0
 
 # P threshold
 set fmri(prob_thresh) 0.05
@@ -206,7 +206,7 @@ set fmri(rendertype) 1
 set fmri(bgimage) 1
 
 # Create time series plots
-set fmri(tsplot_yn) 1
+set fmri(tsplot_yn) 0
 
 # Registration to initial structural
 set fmri(reginitial_highres_yn) 0
@@ -233,7 +233,7 @@ set fmri(reghighres_search) 90
 set fmri(reghighres_dof) BBR
 
 # Registration to standard image?
-set fmri(regstandard_yn) 0
+set fmri(regstandard_yn) 1
 
 # Use alternate reference images?
 set fmri(alternateReference_yn) 0
@@ -257,23 +257,38 @@ set fmri(regstandard_nonlinear_yn) 0
 set fmri(regstandard_nonlinear_warpres) 10
 
 # High pass filter cutoff
-set fmri(paradigm_hp) 45
+set fmri(paradigm_hp) 60
 
 # Total voxels
-set fmri(totalVoxels) 233416040
+set fmri(totalVoxels) 62400
 
 
 # Number of lower-level copes feeding into higher-level analysis
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/func_reg_distcorUnwrp/prf_03"
+set feat_files(1) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_01.feat/stats/cope5"
+
+# 4D AVW data or FEAT directory (2)
+set feat_files(2) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_02.feat/stats/cope5"
+
+# 4D AVW data or FEAT directory (3)
+set feat_files(3) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_03.feat/stats/cope5"
+
+# 4D AVW data or FEAT directory (4)
+set feat_files(4) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_04.feat/stats/cope5"
+
+# 4D AVW data or FEAT directory (5)
+set feat_files(5) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_05.feat/stats/cope5"
+
+# 4D AVW data or FEAT directory (6)
+set feat_files(6) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_06.feat/stats/cope5"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
 
 # EV 1 title
-set fmri(evtitle1) ""
+set fmri(evtitle1) "stim"
 
 # Basic waveform shape (EV 1)
 # 0 : Square
@@ -282,7 +297,7 @@ set fmri(evtitle1) ""
 # 3 : Custom (3 column format)
 # 4 : Interaction
 # 10 : Empty (all zeros)
-set fmri(shape1) 0
+set fmri(shape1) 2
 
 # Convolution (EV 1)
 # 0 : None
@@ -292,37 +307,19 @@ set fmri(shape1) 0
 # 4 : Gamma basis functions
 # 5 : Sine basis functions
 # 6 : FIR basis functions
-set fmri(convolve1) 2
+set fmri(convolve1) 0
 
 # Convolve phase (EV 1)
 set fmri(convolve_phase1) 0
 
 # Apply temporal filtering (EV 1)
-set fmri(tempfilt_yn1) 1
+set fmri(tempfilt_yn1) 0
 
 # Add temporal derivative (EV 1)
-set fmri(deriv_yn1) 1
+set fmri(deriv_yn1) 0
 
-# Skip (EV 1)
-set fmri(skip1) 0
-
-# Off (EV 1)
-set fmri(off1) 30
-
-# On (EV 1)
-set fmri(on1) 30
-
-# Phase (EV 1)
-set fmri(phase1) 0
-
-# Stop (EV 1)
-set fmri(stop1) -1
-
-# Gamma sigma (EV 1)
-set fmri(gammasigma1) 3
-
-# Gamma delay (EV 1)
-set fmri(gammadelay1) 6
+# Custom EV file (EV 1)
+set fmri(custom1) "dummy"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
@@ -330,32 +327,59 @@ set fmri(ortho1.0) 0
 # Orthogonalise EV 1 wrt EV 1
 set fmri(ortho1.1) 0
 
+# Higher-level EV value for EV 1 and input 1
+set fmri(evg1.1) 1.0
+
+# Higher-level EV value for EV 1 and input 2
+set fmri(evg2.1) 1.0
+
+# Higher-level EV value for EV 1 and input 3
+set fmri(evg3.1) 1.0
+
+# Higher-level EV value for EV 1 and input 4
+set fmri(evg4.1) 1.0
+
+# Higher-level EV value for EV 1 and input 5
+set fmri(evg5.1) 1.0
+
+# Higher-level EV value for EV 1 and input 6
+set fmri(evg6.1) 1.0
+
+# Setup Orthogonalisation at higher level?
+set fmri(level2orth) 0
+
+# Group membership for input 1
+set fmri(groupmem.1) 1
+
+# Group membership for input 2
+set fmri(groupmem.2) 1
+
+# Group membership for input 3
+set fmri(groupmem.3) 1
+
+# Group membership for input 4
+set fmri(groupmem.4) 1
+
+# Group membership for input 5
+set fmri(groupmem.5) 1
+
+# Group membership for input 6
+set fmri(groupmem.6) 1
+
 # Contrast & F-tests mode
 # real : control real EVs
 # orig : control original EVs
-set fmri(con_mode_old) orig
-set fmri(con_mode) orig
+set fmri(con_mode_old) real
+set fmri(con_mode) real
 
 # Display images for contrast_real 1
-set fmri(conpic_real.1) 1
+set fmri(conpic_real.1) 0
 
 # Title for contrast_real 1
-set fmri(conname_real.1) ""
+set fmri(conname_real.1) "stim"
 
 # Real contrast_real vector 1 element 1
 set fmri(con_real1.1) 1
-
-# Real contrast_real vector 1 element 2
-set fmri(con_real1.2) 0
-
-# Display images for contrast_orig 1
-set fmri(conpic_orig.1) 1
-
-# Title for contrast_orig 1
-set fmri(conname_orig.1) ""
-
-# Real contrast_orig vector 1 element 1
-set fmri(con_orig1.1) 1
 
 # Contrast masking - use >0 instead of thresholding?
 set fmri(conmask_zerothresh_yn) 0
