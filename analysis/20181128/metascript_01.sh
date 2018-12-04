@@ -16,7 +16,7 @@ pacman_sub_id="20181128"
 pacman_sub_id_bids="sub-05"
 
 # Analysis parent directory (containing scripts):
-pacman_anly_path="/home/john/PhD/GitLab/surface/analysis/"
+pacman_anly_path="/Users/john/1_PhD/GitLab/surface/analysis/"
 
 # Data parent directory (containing MRI data). If working with the BIDS data,
 # this data should be placed here (i.e. this folder should contain a folder
@@ -37,7 +37,7 @@ pacman_from_bids=true
 pacman_wait=true
 
 # Number of parallel processes to use (for pRF finding):
-pacman_cpu="11"
+pacman_cpu="4"
 #-------------------------------------------------------------------------------
 
 

@@ -28,7 +28,7 @@
 pacman_sub_id="20181128"
 
 # Analysis parent directory (containing scripts):
-pacman_anly_path="/home/john/PhD/GitLab/surface/analysis/"
+pacman_anly_path="/Users/john/1_PhD/GitLab/surface/analysis/"
 
 # Data parent directory (containing MRI data):
 pacman_data_path="/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/"
@@ -36,7 +36,7 @@ pacman_data_path="/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/"
 # Segmentation version (segmentation files need to be at `${pacman_anly_path}
 # ${pacman_sub_id}/08_depthsampling/${pacman_sub_id}_mp2rage_seg_
 # ${pacman_seg_version}`):
-pacman_seg_version="v43"
+pacman_seg_version="v21"
 #-------------------------------------------------------------------------------
 
 
@@ -55,12 +55,33 @@ export pacman_seg_version
 # ### Activate docker image
 
 # Enable x11 clients (at the host)
-xhost +local:all
+# xhost +local:all
+
+# Run docker from image with shared folders. Environmental variables are passed
+# in with the '-e' flag.
+# docker run -it --rm \
+#     -e DISPLAY=$DISPLAY \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -v ${pacman_data_path}:${pacman_data_path} \
+#     -v ${pacman_anly_path}:${pacman_anly_path} \
+#     -e pacman_sub_id \
+#     -e pacman_anly_path \
+#     -e pacman_data_path \
+#     -e pacman_seg_version \
+#     dockerimage_cbs ${pacman_anly_path}${pacman_sub_id}/08_depthsampling/depthsampling_metascript.sh &> /home/john/Dropbox/Sonstiges/docker_log_cbs_${pacman_sub_id}.txt
+
+# --- Adjustment for mac os host ---
+
+# Get IP (on host):
+ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+
+# Enable x11 clients (on host):
+xhost + $ip
 
 # Run docker from image with shared folders. Environmental variables are passed
 # in with the '-e' flag.
 docker run -it --rm \
-    -e DISPLAY=$DISPLAY \
+    -e DISPLAY=$ip:0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ${pacman_data_path}:${pacman_data_path} \
     -v ${pacman_anly_path}:${pacman_anly_path} \
@@ -68,5 +89,5 @@ docker run -it --rm \
     -e pacman_anly_path \
     -e pacman_data_path \
     -e pacman_seg_version \
-    dockerimage_cbs ${pacman_anly_path}${pacman_sub_id}/08_depthsampling/depthsampling_metascript.sh &> /home/john/Dropbox/Sonstiges/docker_log_cbs_${pacman_sub_id}.txt
+    dockerimage_cbs ${pacman_anly_path}${pacman_sub_id}/08_depthsampling/depthsampling_metascript.sh
 #-------------------------------------------------------------------------------
