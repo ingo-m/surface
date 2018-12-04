@@ -107,7 +107,7 @@ tplLimCntrY = (-2.325, 2.325)
 varLimL1 = np.sqrt((np.power(2.325, 2.325) + np.power(2.325, 2.325)))
 
 # Radius of central region to avoid (fixation dot):
-varFix = 0.25
+varFix = 0.75
 
 # Limits of border ROI (border is at 3.325 deg):
 lstLimEdgX = [(-3.825, -2.825), (2.825, 3.825)]
