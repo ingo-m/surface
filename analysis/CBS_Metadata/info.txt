@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-pRF_results_file_list_version_01.txt
+*file_list_version_01.txt
 
 pRF overlap with ROIs: background, centre, edge;
 for experimental conditions: Kanizsa, dark square, bright square.
@@ -9,10 +9,30 @@ Subject 20181029.
 
 
 -------------------------------------------------------------------------------
-pRF_results_file_list_version_02.txt
+*file_list_version_02.txt
 
 pRF overlap with ROIs: background, centre, diamond (centre rotated), edge;
 for experimental conditions: Kanizsa, Kanizsa rotated, bright square.
 
 Subject 20181105 and following.
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+*file_list_version_03.txt
+
+Control experiment with conditions Pac-Man static and bright square, each with
+dark texture background (as in Pac-Man study) and dark uniform background. The
+size of the central bright square (and that of the corresponding ROIs) is
+slightly larger than in previous surface-study experiments, in order to match
+the area of the Pac-Man.
+
+pRF overlap with ROIs: square_centre, square_edge, background, (diamond),
+                       pacman_centre, pacman_edge
+for experimental conditions: bright_square_txtr, bright_square_uni,
+                             pacman_static_txtr, pacman_static_uni
+
+(Diamond ROI is redundant.)
+
+Subject 20181128.
 -------------------------------------------------------------------------------
