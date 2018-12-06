@@ -48,12 +48,14 @@ pacman_sub_id = str(os.environ['pacman_sub_id'])
 dicSubId = {pacman_sub_id: 6}
 
 # Paths with files to be renamed (subject ID left open):
-lstPths = [pacman_data_path + '{}/cbs/rh_era/bright_square/',
-           pacman_data_path + '{}/cbs/rh_era/kanizsa_rotated/',
-           pacman_data_path + '{}/cbs/rh_era/kanizsa/',
-           pacman_data_path + '{}/cbs/lh_era/bright_square/',
-           pacman_data_path + '{}/cbs/lh_era/kanizsa_rotated/',
-           pacman_data_path + '{}/cbs/lh_era/kanizsa/']
+lstPths = [pacman_data_path + '{}/cbs/rh_era/bright_square_txtr/',
+           pacman_data_path + '{}/cbs/rh_era/bright_square_uni/',
+           pacman_data_path + '{}/cbs/rh_era/pacman_static_txtr/',
+           pacman_data_path + '{}/cbs/rh_era/pacman_static_uni/',
+           pacman_data_path + '{}/cbs/lh_era/bright_square_txtr/',
+           pacman_data_path + '{}/cbs/lh_era/bright_square_uni/',
+           pacman_data_path + '{}/cbs/lh_era/pacman_static_txtr/',
+           pacman_data_path + '{}/cbs/lh_era/pacman_static_uni/']
 
 # File type (suffix):
 strFleTpe = '.vtk'
