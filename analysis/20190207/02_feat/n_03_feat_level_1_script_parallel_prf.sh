@@ -13,8 +13,7 @@ NEW_ANALYSIS_PATH="${pacman_anly_path}"
 
 # Functional runs:
 arySessionIDs=(prf_01 \
-               prf_02 \
-               prf_03)
+               prf_02)
 
 for index01 in ${arySessionIDs[@]}
 do
@@ -38,7 +37,6 @@ echo "---pRF runs 01, 02, 03"
 date
 feat "${str_path}feat_level_1_prf_01_sed.fsf" &
 feat "${str_path}feat_level_1_prf_02_sed.fsf" &
-feat "${str_path}feat_level_1_prf_03_sed.fsf" &
 wait
 
 date

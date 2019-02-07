@@ -16,7 +16,7 @@ pacman_data_path = getenv('pacman_data_path');
 % Path of the SPM moco directory:
 strPathParent = strcat(pacman_data_path, pacman_sub_id, '/nii/spm_reg/');
 % The number of functional runs:
-varNumRuns = 10;
+varNumRuns = 9;
 % Name of the 'SPM batch' to be created:
 strPathOut = [strPathParent, 'spm_moco_batch.mat'];
 %--------------------------------------------------------------------------

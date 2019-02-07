@@ -17,8 +17,7 @@ arySessionIDs=(func_01 \
                func_05 \
                func_06 \
                prf_01 \
-               prf_02 \
-               prf_03)
+               prf_02)
 
 # Parent path:
 strPathParent="${pacman_data_path}${pacman_sub_id}/nii/"

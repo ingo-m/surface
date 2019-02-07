@@ -31,6 +31,4 @@ mv ${strPath}func_05.nii.gz ${strPath}func_03.nii.gz
 mv ${strPath}func_06.nii.gz ${strPath}func_04.nii.gz
 mv ${strPath}func_07.nii.gz ${strPath}func_05.nii.gz
 mv ${strPath}func_08.nii.gz ${strPath}func_06.nii.gz
-
-mv ${strPath}func_09.nii.gz ${strPath}prf_03.nii.gz
 #-------------------------------------------------------------------------------

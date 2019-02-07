@@ -49,8 +49,7 @@ dicSubId = {pacman_sub_id: ['prf_01',
                             'func_03',
                             'func_04',
                             'func_05',
-                            'func_06',
-                            'prf_03']}
+                            'func_06']}
 
 # The path of the 3D reference images (subject ID left open):
 strPathRef = (pacman_data_path +
