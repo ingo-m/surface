@@ -110,6 +110,7 @@ then
 	mkdir "${str_nii}/retinotopy/pRF_results"
 	mkdir "${str_nii}/retinotopy/pRF_results_up"
 	mkdir "${str_nii}/retinotopy/pRF_stimuli"
+	mkdir "${str_nii}/retinotopy/extrasession"
 
 	# Create subfolders for SPM - func across runs moco:
 	mkdir "${str_nii}/spm_reg"
