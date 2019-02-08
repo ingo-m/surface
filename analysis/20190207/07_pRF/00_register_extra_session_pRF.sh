@@ -48,7 +48,7 @@ strPthRef="${pacman_data_path}20190207/nii/func_reg_tsnr/combined_mean.nii.gz"
 strPthIn="${pacman_data_path}BIDS/${pacman_sub_id_bids}/extrasession_prf/"
 
 # Create directory for extra-session pRF data:
-mkdir ${strPthOut}
+# mkdir ${strPthOut}
 # -----------------------------------------------------------------------------
 
 
@@ -85,20 +85,20 @@ flirt \
 -interp trilinear \
 -in ${strPthIn}20181108_prf_01.nii.gz \
 -ref ${strPthRef} \
--applyxfm -init ${strPthMat01} \
+-applyxfm -init ${strPthMat02} \
 -out ${strPthOut}/20181108_prf_01
 
 flirt \
 -interp trilinear \
 -in ${strPthIn}20181108_prf_02.nii.gz \
 -ref ${strPthRef} \
--applyxfm -init ${strPthMat01} \
+-applyxfm -init ${strPthMat02} \
 -out ${strPthOut}/20181108_prf_02
 
 flirt \
 -interp trilinear \
 -in ${strPthIn}20181108_prf_03.nii.gz \
 -ref ${strPthRef} \
--applyxfm -init ${strPthMat01} \
+-applyxfm -init ${strPthMat02} \
 -out ${strPthOut}/20181108_prf_03
 # -----------------------------------------------------------------------------
