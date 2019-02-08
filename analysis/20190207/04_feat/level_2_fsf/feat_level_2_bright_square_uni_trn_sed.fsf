@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 0
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_2_comb/feat_level_2_bright_square_uni_trn"
+set fmri(outputdir) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_2_comb/feat_level_2_bright_square_uni_trn"
 
 # TR(s)
 set fmri(tr) 3
@@ -263,13 +263,13 @@ set fmri(paradigm_hp) 100
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_02.feat/stats/cope2.nii.gz"
+set feat_files(1) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_comb/func_02.feat/stats/cope2.nii.gz"
 
 # 4D AVW data or FEAT directory (2)
-set feat_files(2) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_04.feat/stats/cope2.nii.gz"
+set feat_files(2) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_comb/func_04.feat/stats/cope2.nii.gz"
 
 # 4D AVW data or FEAT directory (3)
-set feat_files(3) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20181128/nii/feat_level_1_comb/func_06.feat/stats/cope2.nii.gz"
+set feat_files(3) "/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_comb/func_06.feat/stats/cope2.nii.gz"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
