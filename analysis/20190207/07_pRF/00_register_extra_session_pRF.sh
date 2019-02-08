@@ -3,11 +3,11 @@
 
 # For subject 20190207 there are additional pRF runs from two previous
 # sessions:
-#     20181029: 3 pRF runs 
+#     20181029: 3 pRF runs
 #     20181108: 3 pRF runs
 #     20190207: 2 pRF runs (this session)
-# Here, the extra-session pRF runs from are registered to session 20190207. The
-#  transformation matrices were calculated using ITK snap, based on the mean
+# Here, the extra-session pRF runs are registered to session 20190207. The
+# transformation matrices were calculated using ITK snap, based on the mean
 # EPI images from from the respective sessions, and converted into an FSL
 # transformation matrix using the c3d_affine_tool:
 #     c3d_affine_tool \
@@ -32,19 +32,20 @@
 # -----------------------------------------------------------------------------
 # ### Preparations
 
-# Path of transformation matrix (20181029 to 20181108):
-strPthMat="${pacman_anly_path}${pacman_sub_id}/07_pRF/20181029_to_20181108_fsl.mat"
+# Path of transformation matrices:
+strPthMat01="${pacman_anly_path}${pacman_sub_id}/07_pRF/20181029_to_20190207_fsl.mat"
+strPthMat02="${pacman_anly_path}${pacman_sub_id}/07_pRF/20181108_to_20190207_fsl.mat"
 
 # Target directory for extra-session pRF data:
-strPthOut="${pacman_data_path}20181108/nii/retinotopy/extrasession"
+strPthOut="${pacman_data_path}20190207/nii/retinotopy/extrasession"
 
-# Path of mean EPI image from target session (i.e. 20181108), used as
+# Path of mean EPI image from target session (i.e. 20190207), used as
 # reference.
-strPthRef="${pacman_data_path}20181108/nii/func_reg_tsnr/combined_mean.nii.gz"
+strPthRef="${pacman_data_path}20190207/nii/func_reg_tsnr/combined_mean.nii.gz"
 
 # Input parent directory (containing motion-corrected, distortion-corrected,
-# feat-high-pass-filtered pRF data).
-strPthIn="${pacman_data_path}20181029/nii/feat_level_1_prf/"
+# feat-high-pass-filtered extra-session pRF data).
+strPthIn="${pacman_data_path}BIDS/${pacman_sub_id_bids}/extrasession_prf/"
 
 # Create directory for extra-session pRF data:
 mkdir ${strPthOut}
@@ -52,26 +53,52 @@ mkdir ${strPthOut}
 
 
 # -----------------------------------------------------------------------------
-# ### Register extra-session pRF data
+# ### Register extra-session pRF data - 20181029
 
 flirt \
 -interp trilinear \
--in ${strPthIn}prf_01.feat/filtered_func_data.nii.gz \
+-in ${strPthIn}20181029_prf_01.nii.gz \
 -ref ${strPthRef} \
--applyxfm -init ${strPthMat} \
+-applyxfm -init ${strPthMat01} \
 -out ${strPthOut}/20181029_prf_01
 
 flirt \
 -interp trilinear \
--in ${strPthIn}prf_02.feat/filtered_func_data.nii.gz \
+-in ${strPthIn}20181029_prf_02.nii.gz \
 -ref ${strPthRef} \
--applyxfm -init ${strPthMat} \
+-applyxfm -init ${strPthMat01} \
 -out ${strPthOut}/20181029_prf_02
 
 flirt \
 -interp trilinear \
--in ${strPthIn}prf_03.feat/filtered_func_data.nii.gz \
+-in ${strPthIn}20181029_prf_03.nii.gz \
 -ref ${strPthRef} \
--applyxfm -init ${strPthMat} \
+-applyxfm -init ${strPthMat01} \
 -out ${strPthOut}/20181029_prf_03
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# ### Register extra-session pRF data - 20181108
+
+flirt \
+-interp trilinear \
+-in ${strPthIn}20181108_prf_01.nii.gz \
+-ref ${strPthRef} \
+-applyxfm -init ${strPthMat01} \
+-out ${strPthOut}/20181108_prf_01
+
+flirt \
+-interp trilinear \
+-in ${strPthIn}20181108_prf_02.nii.gz \
+-ref ${strPthRef} \
+-applyxfm -init ${strPthMat01} \
+-out ${strPthOut}/20181108_prf_02
+
+flirt \
+-interp trilinear \
+-in ${strPthIn}20181108_prf_03.nii.gz \
+-ref ${strPthRef} \
+-applyxfm -init ${strPthMat01} \
+-out ${strPthOut}/20181108_prf_03
 # -----------------------------------------------------------------------------
