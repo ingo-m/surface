@@ -258,21 +258,9 @@ date
 #-------------------------------------------------------------------------------
 # ### pRF analysis
 
-# ~~~
-if ${pacman_wait};
-then
-	echo "---Manual:"
-	echo " "
-	echo "   PREPARE EXTRA SESSION PRF DATA"
-	echo " "
-	echo "   Type 'go' to continue"
-	read -r -s -d $'g'
-	read -r -s -d $'o'
-	date
-else
-	:
-fi
-# ~~~
+echo "---Automatic: Register extra-session pRF data (from pilot session)."
+source ${strPathPrnt}07_pRF/00_register_extra_session_pRF.sh
+date
 
 echo "---Automatic: Prepare pRF analysis."
 python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
