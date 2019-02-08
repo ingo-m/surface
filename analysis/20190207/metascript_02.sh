@@ -258,6 +258,22 @@ date
 #-------------------------------------------------------------------------------
 # ### pRF analysis
 
+# ~~~
+if ${pacman_wait};
+then
+	echo "---Manual:"
+	echo " "
+	echo "   PREPARE EXTRA SESSION PRF DATA"
+	echo " "
+	echo "   Type 'go' to continue"
+	read -r -s -d $'g'
+	read -r -s -d $'o'
+	date
+else
+	:
+fi
+# ~~~
+
 echo "---Automatic: Prepare pRF analysis."
 python ${strPathPrnt}07_pRF/01_py_prepare_prf.py
 source ${strPathPrnt}07_pRF/02a_prepare_pRF_config.sh

@@ -260,22 +260,6 @@ date
 # Here, the three pRF runs from session 20181029 are registered to session
 # 20181108.
 
-# ~~~
-if ${pacman_wait};
-then
-	echo "---Manual:"
-	echo " "
-	echo "   PREPARE EXTRA SESSION PRF DATA"
-	echo " "
-	echo "   Type 'go' to continue"
-	read -r -s -d $'g'
-	read -r -s -d $'o'
-	date
-else
-	:
-fi
-# ~~~
-
 echo "---Automatic: Register extra-session pRF data (from pilot session)."
 source ${strPathPrnt}07_pRF/00_register_extra_session_pRF.sh
 date
