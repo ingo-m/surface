@@ -63,7 +63,7 @@ varSdSmthSpt = 1.6
 lgcLinTrnd = True
 
 # Number of processes to run in parallel:
-varPar = 11
+varPar = 5
 
 # Size of high-resolution visual space model in which the pRF models are
 # created (x- and y-dimension). The x and y dimensions specified here need to
@@ -78,7 +78,7 @@ varVslSpcSzeY = 200
 # functional runs. The order of functional volumes, and their number, has to
 # correspond to the order and number of PNG files containing the stimulus
 # information. Note: Do not insert a line break.
-lstPathNiiFunc = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_prf/prf_02.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_prf/prf_03.feat/filtered_func_data.nii.gz']
+lstPathNiiFunc = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_prf/prf_01.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/feat_level_1_prf/prf_02.feat/filtered_func_data.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/extrasession/20181029_prf_01.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/extrasession/20181029_prf_02.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/extrasession/20181029_prf_03.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/extrasession/20181108_prf_01.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/extrasession/20181108_prf_02.nii.gz', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/extrasession/20181108_prf_03.nii.gz']
 
 # Path of mask (to restrict pRF model finding):
 strPathNiiMask = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/mask/brainmask.nii.gz'
@@ -91,7 +91,7 @@ strPathOut = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/20190207/nii/retinotopy/
 strVersion = 'cython'
 
 # Create pRF time course models?
-lgcCrteMdl = False
+lgcCrteMdl = True
 
 # If we create new pRF time course models, the following parameters have to
 # be provided:
@@ -101,7 +101,7 @@ lgcCrteMdl = False
 # `~/pyprf/stimulus_presentation/code/stimulus.py` with 'Logging mode' set to
 # 'True'. (Number & order of entries in `lstPathNiiFunc` and `lstPathPng` has
 # to match). Note: Do not insert a line break (i.e. all runs on one line).
-lstPathPng = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_02_pRF_stimuli/Run_01_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_02_pRF_stimuli/Run_02_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_02_pRF_stimuli/Run_03_frames/frame_']
+lstPathPng = ['/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20190207_prf_01_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20190207_prf_02_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20181029_prf_01_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20181029_prf_02_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20181029_prf_03_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20181108_prf_01_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20181108_prf_02_frames/frame_', '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_stimuli/20181108_prf_03_frames/frame_']
 
 # Start index of PNG files. For instance, `varStrtIdx = 0` if the name of
 # the first PNG file is `file_000.png`, or `varStrtIdx = 1` if it is
@@ -115,7 +115,7 @@ varZfill = 3
 
 # Path to npy file with pRF time course models (to save or to load). Without
 # file extension.
-strPathMdl = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_02_pRF_time_course_models_03_runs/pRF_model_tc'
+strPathMdl = '/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/BIDS/stimuli/version_04_pRF_time_course_models_08_runs/pRF_model_tc'
 
 # In case of a multi-run experiment, data may not fit into memory. In that
 # case, you can switch to hdf5 mode, with reduced memory impact. Data are
