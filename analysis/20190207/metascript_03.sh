@@ -25,10 +25,10 @@
 # ### Define paths
 
 # Subject ID:
-pacman_sub_id="20181128"
+pacman_sub_id="20190207"
 
 # Analysis parent directory (containing scripts):
-pacman_anly_path="/Users/john/1_PhD/GitLab/surface/analysis/"
+pacman_anly_path="/home/john/PhD/GitLab/surface/analysis/"
 
 # Data parent directory (containing MRI data):
 pacman_data_path="/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/"
@@ -36,7 +36,7 @@ pacman_data_path="/media/sf_D_DRIVE/MRI_Data_PhD/09_surface/"
 # Segmentation version (segmentation files need to be at `${pacman_anly_path}
 # ${pacman_sub_id}/08_depthsampling/${pacman_sub_id}_mp2rage_seg_
 # ${pacman_seg_version}`):
-pacman_seg_version="v21"
+pacman_seg_version="v05"
 #-------------------------------------------------------------------------------
 
 
