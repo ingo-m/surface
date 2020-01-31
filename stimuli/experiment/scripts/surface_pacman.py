@@ -956,7 +956,7 @@ for idx01 in range(varNumEvnts):  #noqa
             varTme02 = objClck.getTime()
 
         # Log end of stimulus block:
-        strTmp = ('STIMULUS end of event ' + unicode(idx01 + 1))
+        strTmp = ('STIMULUS end of event ' + str(idx01 + 1))
         logging.data(strTmp)
 # -----------------------------------------------------------------------------
 
